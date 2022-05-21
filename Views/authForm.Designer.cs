@@ -35,23 +35,28 @@
             // 
             // usernameBox
             // 
-            this.usernameBox.Location = new System.Drawing.Point(12, 12);
+            this.usernameBox.Location = new System.Drawing.Point(14, 16);
+            this.usernameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(176, 23);
+            this.usernameBox.Size = new System.Drawing.Size(201, 27);
             this.usernameBox.TabIndex = 0;
+            this.usernameBox.Text = "admin";
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(12, 41);
+            this.passwordBox.Location = new System.Drawing.Point(14, 55);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(176, 23);
+            this.passwordBox.Size = new System.Drawing.Size(201, 27);
             this.passwordBox.TabIndex = 1;
+            this.passwordBox.Text = "admin";
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(12, 70);
+            this.loginBtn.Location = new System.Drawing.Point(14, 93);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(176, 23);
+            this.loginBtn.Size = new System.Drawing.Size(201, 31);
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Вход";
             this.loginBtn.UseVisualStyleBackColor = true;
@@ -59,13 +64,14 @@
             // 
             // authForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 102);
+            this.ClientSize = new System.Drawing.Size(229, 136);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "authForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
