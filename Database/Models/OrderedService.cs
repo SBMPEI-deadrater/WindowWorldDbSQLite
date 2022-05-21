@@ -8,17 +8,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 using WindowWorldDbSQLite.Database.Base;
 using WindowWorldDbSQLite.Database.Models;
 
+
 namespace WindowWorldDbSQLite.Database.Models
 {
-    [Table("orders")]
-    public class Orders: BaseEntity
+    public class OrderedService : BaseEntity
     {
-        [Column("good_id", Order = 1)]
-        public int GoodId { get; set; }
-        public Good Good { get; set; }
+        [Column("service_id", Order = 1)]
+        public int ServiceId { get; set; }
+        public Service Service { get; set; }
 
-        [Column("date_order", Order = 2)]
-        public DateTime DateOrder { get; set; }
+        [Column("ordered_date", Order = 2)]
+        public DateTime OrderedDate { get; set; }
 
         [Column("customer_id", Order = 3)]
         public int CustomerId { get; set; }
@@ -30,13 +30,13 @@ namespace WindowWorldDbSQLite.Database.Models
         [Column("release_date", Order = 5)]
         public DateTime ReleaseDate { get; set; }
 
-        [Column("order_price", Order = 6)]
-        public decimal OrderPrice { get; set; }
+        [Column("price", Order = 6)]
+        public decimal Price { get; set; }
 
         [Column("is_payed", Order = 7)]
         public bool IsPayed { get; set; }
 
-        [Column("order_progress", Order = 8)]
-        public bool OrderProgress { get; set; }
+        [Column("progress", Order = 8)]
+        public bool Progress { get; set; }
     }
 }
