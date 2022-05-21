@@ -33,7 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageBox = new System.Windows.Forms.PictureBox();
             this.activeChkBox = new System.Windows.Forms.CheckBox();
             this.priceBox = new System.Windows.Forms.TextBox();
             this.typeBox = new System.Windows.Forms.TextBox();
@@ -62,12 +62,28 @@
             this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.imageAddBox = new System.Windows.Forms.PictureBox();
+            this.priceAddBox = new System.Windows.Forms.TextBox();
+            this.typeAddBox = new System.Windows.Forms.TextBox();
+            this.companyAddBox = new System.Windows.Forms.TextBox();
+            this.nameAddBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numAddBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.searchGrBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageAddBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -79,6 +95,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1316, 685);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -99,7 +116,7 @@
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.imageBox);
             this.groupBox1.Controls.Add(this.activeChkBox);
             this.groupBox1.Controls.Add(this.priceBox);
             this.groupBox1.Controls.Add(this.typeBox);
@@ -136,13 +153,13 @@
             this.button1.Text = "Сохранить изменения";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // imageBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 295);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(412, 324);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.imageBox.Location = new System.Drawing.Point(6, 295);
+            this.imageBox.Name = "imageBox";
+            this.imageBox.Size = new System.Drawing.Size(412, 324);
+            this.imageBox.TabIndex = 12;
+            this.imageBox.TabStop = false;
             // 
             // activeChkBox
             // 
@@ -367,6 +384,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -375,22 +393,148 @@
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox2.Controls.Add(this.addBtn);
+            this.groupBox2.Controls.Add(this.imageAddBox);
+            this.groupBox2.Controls.Add(this.priceAddBox);
+            this.groupBox2.Controls.Add(this.typeAddBox);
+            this.groupBox2.Controls.Add(this.companyAddBox);
+            this.groupBox2.Controls.Add(this.nameAddBox);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.numAddBox);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1302, 651);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(263, 404);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(418, 39);
+            this.addBtn.TabIndex = 13;
+            this.addBtn.Text = "Добавить запись";
+            this.addBtn.UseVisualStyleBackColor = true;
+            // 
+            // imageAddBox
+            // 
+            this.imageAddBox.Location = new System.Drawing.Point(705, 154);
+            this.imageAddBox.Name = "imageAddBox";
+            this.imageAddBox.Size = new System.Drawing.Size(302, 289);
+            this.imageAddBox.TabIndex = 12;
+            this.imageAddBox.TabStop = false;
+            // 
+            // priceAddBox
+            // 
+            this.priceAddBox.Location = new System.Drawing.Point(263, 375);
+            this.priceAddBox.Name = "priceAddBox";
+            this.priceAddBox.Size = new System.Drawing.Size(418, 23);
+            this.priceAddBox.TabIndex = 9;
+            // 
+            // typeAddBox
+            // 
+            this.typeAddBox.Location = new System.Drawing.Point(263, 321);
+            this.typeAddBox.Name = "typeAddBox";
+            this.typeAddBox.Size = new System.Drawing.Size(418, 23);
+            this.typeAddBox.TabIndex = 8;
+            // 
+            // companyAddBox
+            // 
+            this.companyAddBox.Location = new System.Drawing.Point(263, 268);
+            this.companyAddBox.Name = "companyAddBox";
+            this.companyAddBox.Size = new System.Drawing.Size(418, 23);
+            this.companyAddBox.TabIndex = 7;
+            // 
+            // nameAddBox
+            // 
+            this.nameAddBox.Location = new System.Drawing.Point(263, 212);
+            this.nameAddBox.Name = "nameAddBox";
+            this.nameAddBox.Size = new System.Drawing.Size(418, 23);
+            this.nameAddBox.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(263, 357);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 15);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Цена изделия, руб.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(263, 303);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 15);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Вид изделия";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(263, 250);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 15);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Производитель";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(263, 194);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Наименование изделия";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(495, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 15);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Код изделия";
+            // 
+            // numAddBox
+            // 
+            this.numAddBox.Location = new System.Drawing.Point(575, 154);
+            this.numAddBox.Name = "numAddBox";
+            this.numAddBox.Size = new System.Drawing.Size(100, 23);
+            this.numAddBox.TabIndex = 0;
+            // 
             // GoodsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1316, 685);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GoodsWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изделия";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.searchGrBox.ResumeLayout(false);
             this.searchGrBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageAddBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,6 +574,19 @@
         private CheckBox activeChkBox;
         private Button button2;
         private Button button1;
-        private PictureBox pictureBox1;
+        private PictureBox imageBox;
+        private GroupBox groupBox2;
+        private Button addBtn;
+        private PictureBox imageAddBox;
+        private TextBox priceAddBox;
+        private TextBox typeAddBox;
+        private TextBox companyAddBox;
+        private TextBox nameAddBox;
+        private Label label11;
+        private Label label12;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private TextBox numAddBox;
     }
 }
