@@ -38,6 +38,12 @@
             this.сменаПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.резервноеКопированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.услугиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заказчикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поИзделиямToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поУслугамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +81,10 @@
             // справочникиToolStripMenuItem
             // 
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.изделияToolStripMenuItem});
+            this.изделияToolStripMenuItem,
+            this.услугиToolStripMenuItem,
+            this.заказчикиToolStripMenuItem,
+            this.заказыToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -117,9 +126,50 @@
             // 
             // справкаToolStripMenuItem
             // 
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // услугиToolStripMenuItem
+            // 
+            this.услугиToolStripMenuItem.Name = "услугиToolStripMenuItem";
+            this.услугиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.услугиToolStripMenuItem.Text = "Услуги";
+            // 
+            // заказчикиToolStripMenuItem
+            // 
+            this.заказчикиToolStripMenuItem.Name = "заказчикиToolStripMenuItem";
+            this.заказчикиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.заказчикиToolStripMenuItem.Text = "Заказчики";
+            // 
+            // заказыToolStripMenuItem
+            // 
+            this.заказыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поИзделиямToolStripMenuItem,
+            this.поУслугамToolStripMenuItem});
+            this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.заказыToolStripMenuItem.Text = "Заказы";
+            // 
+            // поИзделиямToolStripMenuItem
+            // 
+            this.поИзделиямToolStripMenuItem.Name = "поИзделиямToolStripMenuItem";
+            this.поИзделиямToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.поИзделиямToolStripMenuItem.Text = "По изделиям";
+            // 
+            // поУслугамToolStripMenuItem
+            // 
+            this.поУслугамToolStripMenuItem.Name = "поУслугамToolStripMenuItem";
+            this.поУслугамToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.поУслугамToolStripMenuItem.Text = "По услугам";
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // MainWindow
             // 
@@ -151,5 +201,11 @@
         private ToolStripMenuItem справкаToolStripMenuItem;
         private ToolStripMenuItem изделияToolStripMenuItem;
         private ToolStripMenuItem выходToolStripMenuItem;
+        private ToolStripMenuItem услугиToolStripMenuItem;
+        private ToolStripMenuItem заказчикиToolStripMenuItem;
+        private ToolStripMenuItem заказыToolStripMenuItem;
+        private ToolStripMenuItem поИзделиямToolStripMenuItem;
+        private ToolStripMenuItem поУслугамToolStripMenuItem;
+        private ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
