@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowWorldDbSQLite.Database.Interfaces
 {
-    internal interface AuditableEntity
+    internal interface IFaceAuditableEntity
     {
         string CreatedBy { get; set; }
         string UpdatedBy { get; set; }
