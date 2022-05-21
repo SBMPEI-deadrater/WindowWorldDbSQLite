@@ -32,5 +32,11 @@ namespace WindowWorldDbSQLite.Views
             NewPassWindow newPass = new NewPassWindow();
             newPass.Show();
         }
+
+        private void изделияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GoodsWindow goodsWindow = new GoodsWindow();
+            goodsWindow.Show();
+        }
     }
 }

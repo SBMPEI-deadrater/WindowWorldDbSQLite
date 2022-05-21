@@ -37,23 +37,23 @@
             // 
             this.usernameBox.Location = new System.Drawing.Point(12, 12);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(100, 23);
+            this.usernameBox.Size = new System.Drawing.Size(176, 23);
             this.usernameBox.TabIndex = 0;
             // 
             // passwordBox
             // 
             this.passwordBox.Location = new System.Drawing.Point(12, 41);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(100, 23);
+            this.passwordBox.Size = new System.Drawing.Size(176, 23);
             this.passwordBox.TabIndex = 1;
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(27, 70);
+            this.loginBtn.Location = new System.Drawing.Point(12, 70);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(75, 23);
+            this.loginBtn.Size = new System.Drawing.Size(176, 23);
             this.loginBtn.TabIndex = 2;
-            this.loginBtn.Text = "Log-In";
+            this.loginBtn.Text = "Вход";
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
@@ -61,12 +61,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(129, 102);
+            this.ClientSize = new System.Drawing.Size(200, 102);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "authForm";
-            this.Text = "authForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

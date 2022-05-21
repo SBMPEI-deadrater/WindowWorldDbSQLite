@@ -33,9 +33,10 @@
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменаПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.резервноеКопированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изделияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,8 @@
             // 
             // справочникиToolStripMenuItem
             // 
+            this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.изделияToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -80,12 +83,6 @@
             this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.сервисToolStripMenuItem.Text = "Сервис";
             // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            // 
             // сменаПарольToolStripMenuItem
             // 
             this.сменаПарольToolStripMenuItem.Name = "сменаПарольToolStripMenuItem";
@@ -99,6 +96,19 @@
             this.резервноеКопированиеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.резервноеКопированиеToolStripMenuItem.Text = "Резервное копирование";
             // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // изделияToolStripMenuItem
+            // 
+            this.изделияToolStripMenuItem.Name = "изделияToolStripMenuItem";
+            this.изделияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изделияToolStripMenuItem.Text = "Изделия";
+            this.изделияToolStripMenuItem.Click += new System.EventHandler(this.изделияToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -107,7 +117,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "Оконный Мир";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -125,7 +135,6 @@
         private ToolStripMenuItem сменаПарольToolStripMenuItem;
         private ToolStripMenuItem резервноеКопированиеToolStripMenuItem;
         private ToolStripMenuItem справкаToolStripMenuItem;
-
-
+        private ToolStripMenuItem изделияToolStripMenuItem;
     }
 }
