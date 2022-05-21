@@ -29,9 +29,33 @@ namespace WindowWorldDbSQLite.Views
             {
                 if (passwordBox.Text != String.Empty)
                 {
-
+                    User myUser = authCTRL.AuthToApp(usernameBox.Text, passwordBox.Text);
+                    if (myUser != null)
+                    {
+                        myUser.Password = passwordBox.Text;
+                        this.Hide();
+                        MainWindow mainWindow = new MainWindow(myUser, this);
+                        mainWindow.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка авторизации! Проверьте корректность данных!","Auth Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка ввода! Введите пароль!","Input Error!",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Ошибка ввода! Введите логин!","Input Error!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void authForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

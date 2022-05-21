@@ -33,17 +33,6 @@ namespace WindowWorldDbSQLite.Database
                 {
                     new User
                     {
-                        Id = 0,
-                        UserName = "root",
-                        Password = et.ComputeSha256Hash("root"),
-                        Role = "root",
-                        CreatedBy = str_init_by,
-                        UpdatedBy = str_init_by,
-                        CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
-                    },
-                    new User
-                    {
                         Id=1,
                         UserName = "admin",
                         Password = et.ComputeSha256Hash("admin"),
