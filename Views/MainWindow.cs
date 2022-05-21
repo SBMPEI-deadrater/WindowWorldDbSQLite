@@ -54,5 +54,11 @@ namespace WindowWorldDbSQLite.Views
             OrderedServicesWindow orderedServicesWindow = new OrderedServicesWindow();
             orderedServicesWindow.Show();
         }
+
+        private void заказчикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomersWindow customersWindow = new CustomersWindow();
+            customersWindow.Show();
+        }
     }
 }

@@ -108,6 +108,7 @@
             this.заказчикиToolStripMenuItem.Name = "заказчикиToolStripMenuItem";
             this.заказчикиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.заказчикиToolStripMenuItem.Text = "Заказчики";
+            this.заказчикиToolStripMenuItem.Click += new System.EventHandler(this.заказчикиToolStripMenuItem_Click);
             // 
             // заказыToolStripMenuItem
             // 
@@ -181,7 +182,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Оконный Мир";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.menuStrip1.ResumeLayout(false);

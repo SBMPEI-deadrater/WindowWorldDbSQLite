@@ -70,7 +70,7 @@
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "authForm";

@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowWorldDbSQLite.Views
 {
-    public partial class OrderedServicesWindow : Form
+    public partial class CustomersWindow : Form
     {
-        public OrderedServicesWindow()
+        public CustomersWindow()
         {
             InitializeComponent();
-            orderDateBox.Text = DateTime.Now.ToString();
         }
     }
 }
