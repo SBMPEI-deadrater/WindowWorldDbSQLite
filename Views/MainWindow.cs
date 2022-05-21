@@ -38,5 +38,15 @@ namespace WindowWorldDbSQLite.Views
             GoodsWindow goodsWindow = new GoodsWindow();
             goodsWindow.Show();
         }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
