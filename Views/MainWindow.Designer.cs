@@ -91,6 +91,7 @@
             this.сменаПарольToolStripMenuItem.Name = "сменаПарольToolStripMenuItem";
             this.сменаПарольToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.сменаПарольToolStripMenuItem.Text = "Смена пароля";
+            this.сменаПарольToolStripMenuItem.Click += new System.EventHandler(this.сменаПарольToolStripMenuItem_Click);
             // 
             // резервноеКопированиеToolStripMenuItem
             // 
@@ -124,5 +125,7 @@
         private ToolStripMenuItem сменаПарольToolStripMenuItem;
         private ToolStripMenuItem резервноеКопированиеToolStripMenuItem;
         private ToolStripMenuItem справкаToolStripMenuItem;
+
+
     }
 }

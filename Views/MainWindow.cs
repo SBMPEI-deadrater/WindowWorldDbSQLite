@@ -26,5 +26,11 @@ namespace WindowWorldDbSQLite.Views
             aForm = _form;
             InitializeComponent();
         }
+
+        private void сменаПарольToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPassWindow newPass = new NewPassWindow();
+            newPass.Show();
+        }
     }
 }
