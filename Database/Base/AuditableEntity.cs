@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WindowWorldDbSQLite.Database.Base
 {
-    public class AuditableEntity: IFaceAuditableEntity
+    /*public class AuditableEntity: IFaceAuditableEntity
     {
         [Column("created_by", Order = 101)]
         [MaxLength(256)]
@@ -25,5 +25,5 @@ namespace WindowWorldDbSQLite.Database.Base
 
         [Column("updated_at", Order = 104)]
         public DateTime UpdatedDate { get; set; } = DateTime.Now;
-    }
+    }*/
 }

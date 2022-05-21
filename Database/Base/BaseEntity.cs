@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WindowWorldDbSQLite.Database.Base
 {
-    public class BaseEntity: AuditableEntity
+    public class BaseEntity//: AuditableEntity
     {
         [Column("id", Order = 0)]
         [Key]

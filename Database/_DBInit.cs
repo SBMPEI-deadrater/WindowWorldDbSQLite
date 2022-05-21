@@ -24,9 +24,6 @@ namespace WindowWorldDbSQLite.Database
 
         public void DefaultGeneration()
         {
-            string str_init_by = "Install Wizard";
-            EncryptionText et = new EncryptionText();
-
             if (!_context.Users.Any())
             {
                 var items = new User[]
@@ -35,23 +32,15 @@ namespace WindowWorldDbSQLite.Database
                     {
                         Id=1,
                         UserName = "admin",
-                        Password = et.ComputeSha256Hash("admin"),
+                        Password = "admin",
                         Role = "admin",
-                        CreatedBy=str_init_by,
-                        UpdatedBy=str_init_by,
-                        CreatedDate=DateTime.Now,
-                        UpdatedDate=DateTime.Now
                     },
                     new User
                     {
                         Id=2,
                         UserName = "user",
-                        Password = et.ComputeSha256Hash("user"),
+                        Password = "user",
                         Role = "user",
-                        CreatedBy = str_init_by,
-                        UpdatedBy = str_init_by,
-                        CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
                     }
                 };
 

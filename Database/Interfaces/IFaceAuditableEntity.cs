@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace WindowWorldDbSQLite.Database.Interfaces
 {
-    internal interface IFaceAuditableEntity
+    /*internal interface IFaceAuditableEntity
     {
-        string CreatedBy { get; set; }
-        string UpdatedBy { get; set; }
-        DateTime CreatedDate { get; set; }
-        DateTime UpdatedDate { get; set; }
-    }
+        //string CreatedBy { get; set; }
+        //string UpdatedBy { get; set; }
+        //удолить
+        //DateTime CreatedDate { get; set; }
+        //DateTime UpdatedDate { get; set; }
+    }*/
 }
