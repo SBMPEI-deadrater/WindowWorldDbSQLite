@@ -40,6 +40,7 @@
             this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -53,7 +54,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1070, 628);
+            this.tabControl1.Size = new System.Drawing.Size(1181, 628);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -62,7 +63,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1062, 600);
+            this.tabPage1.Size = new System.Drawing.Size(1173, 600);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -78,13 +79,15 @@
             this.typeCol,
             this.priceCol,
             this.activeCol,
-            this.progressCol});
+            this.progressCol,
+            this.deleteCol});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1056, 594);
+            this.dataGridView1.Size = new System.Drawing.Size(1167, 594);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
@@ -107,6 +110,7 @@
             // 
             this.numGoodsCol.HeaderText = "Код";
             this.numGoodsCol.Name = "numGoodsCol";
+            this.numGoodsCol.Width = 20;
             // 
             // nameGoodsCol
             // 
@@ -145,11 +149,16 @@
             this.progressCol.Name = "progressCol";
             this.progressCol.Width = 70;
             // 
+            // deleteCol
+            // 
+            this.deleteCol.HeaderText = "Удалить";
+            this.deleteCol.Name = "deleteCol";
+            // 
             // GoodsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 628);
+            this.ClientSize = new System.Drawing.Size(1181, 628);
             this.Controls.Add(this.tabControl1);
             this.Name = "GoodsWindow";
             this.Text = "Изделия";
@@ -174,5 +183,6 @@
         private DataGridViewTextBoxColumn priceCol;
         private DataGridViewCheckBoxColumn activeCol;
         private DataGridViewCheckBoxColumn progressCol;
+        private DataGridViewButtonColumn deleteCol;
     }
 }
