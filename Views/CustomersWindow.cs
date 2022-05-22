@@ -52,6 +52,8 @@ namespace WindowWorldDbSQLite.Views
 
         private void CustomersWindow_Load(object sender, EventArgs e)
         {
+            dataGridCustomers.Columns[6].Visible = false;
+            dataGridCustomers.Columns[7].Visible = false;
             comboSearchBox.SelectedIndex = 0;
             UpdateForm();
         }

@@ -50,6 +50,8 @@ namespace WindowWorldDbSQLite.Views
 
         private void ServicesWindow_Load(object sender, EventArgs e)
         {
+            dataGridView.Columns[4].Visible = false;
+            dataGridView.Columns[5].Visible = false;
             UpdateForm();
         }
 

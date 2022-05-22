@@ -108,6 +108,8 @@ namespace WindowWorldDbSQLite.Views
 
         private void OrderedGoodsWindow_Load(object sender, EventArgs e)
         {
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
             UpdateForm();
             UpdateFormTwo();
         }
