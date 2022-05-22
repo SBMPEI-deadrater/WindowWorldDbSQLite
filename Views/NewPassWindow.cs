@@ -25,7 +25,7 @@ namespace WindowWorldDbSQLite.Views
 
         private void newpassBtn_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 bool result = newPass.ChangePassword(newpassBox.Text);
                 if (result)
@@ -40,7 +40,7 @@ namespace WindowWorldDbSQLite.Views
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
     }
 }
