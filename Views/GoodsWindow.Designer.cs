@@ -182,7 +182,6 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(370, 27);
             this.searchBox.TabIndex = 0;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // dataGridView
             // 
