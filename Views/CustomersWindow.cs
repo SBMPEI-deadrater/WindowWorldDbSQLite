@@ -166,19 +166,16 @@ namespace WindowWorldDbSQLite.Views
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             CustomerContrller cc = new CustomerContrller();
-            switch (comboSearchBox.TabIndex)
+            switch (comboSearchBox.SelectedIndex)
             {
-                case 1:
+                case 0:
                     UpdateForm(searchBox.Text, "common");
                     break;
-                case 2:
+                case 1:
                     UpdateForm(searchBox.Text, "adress");
                     break;
-                case 3:
+                case 2:
                     UpdateForm(searchBox.Text, "phone");
-                    break;
-                default:
-                    UpdateForm(searchBox.Text, "common");
                     break;
             }
         }

@@ -66,6 +66,7 @@
             this.priceAddBox.Name = "priceAddBox";
             this.priceAddBox.Size = new System.Drawing.Size(477, 27);
             this.priceAddBox.TabIndex = 9;
+            this.priceAddBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceAddBox_KeyPress);
             // 
             // typeAddBox
             // 
@@ -195,13 +196,11 @@
             // 
             // comboSearchBox
             // 
+            this.comboSearchBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSearchBox.FormattingEnabled = true;
             this.comboSearchBox.Items.AddRange(new object[] {
             "Общий поиск",
-            "Поиск по производителю",
-            "Поиск по типу",
-            "Поиск по цене",
-            "Поиск по наименованию"});
+            "Поиск по цене"});
             this.comboSearchBox.Location = new System.Drawing.Point(113, 29);
             this.comboSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboSearchBox.Name = "comboSearchBox";
