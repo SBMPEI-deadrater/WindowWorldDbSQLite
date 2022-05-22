@@ -21,10 +21,6 @@ namespace WindowWorldDbSQLite.Views
         {
             authCTRL = new AuthCTRL();
             InitializeComponent();
-
-           /* object s = new object();
-            EventArgs e = new EventArgs();
-            loginBtn_Click(s, e);*/
         }
 
         private void loginBtn_Click(object sender, EventArgs e)

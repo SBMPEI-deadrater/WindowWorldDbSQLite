@@ -25,7 +25,7 @@ namespace WindowWorldDbSQLite.Views
             mUser = _user;
             aForm = _form;
             InitializeComponent();
-            this.Text = $"{this.Text} — {mUser.UserName}({mUser.Role})";
+            this.Text = $"{this.Text} ({mUser.Role})";
         }
 
         private void сменаПарольToolStripMenuItem_Click(object sender, EventArgs e)
