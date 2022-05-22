@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -42,15 +41,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.numAddBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.searchGrBox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderedDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,22 +52,14 @@
             this.isPayedCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.searchGrBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(566, 210);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Код услуги";
             // 
             // tabPage2
             // 
@@ -102,8 +85,6 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.numAddBox);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 4);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -190,14 +171,6 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Дата заказа";
             // 
-            // numAddBox
-            // 
-            this.numAddBox.Location = new System.Drawing.Point(657, 205);
-            this.numAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numAddBox.Name = "numAddBox";
-            this.numAddBox.Size = new System.Drawing.Size(114, 27);
-            this.numAddBox.TabIndex = 0;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -220,86 +193,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1075, 880);
+            this.dataGridView1.Size = new System.Drawing.Size(1200, 880);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1089, 921);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.searchGrBox);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1081, 888);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Список";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // searchGrBox
-            // 
-            this.searchGrBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.searchGrBox.Controls.Add(this.label2);
-            this.searchGrBox.Controls.Add(this.label1);
-            this.searchGrBox.Controls.Add(this.comboBox1);
-            this.searchGrBox.Controls.Add(this.textBox1);
-            this.searchGrBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchGrBox.Location = new System.Drawing.Point(3, 772);
-            this.searchGrBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchGrBox.Name = "searchGrBox";
-            this.searchGrBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchGrBox.Size = new System.Drawing.Size(1075, 112);
-            this.searchGrBox.TabIndex = 1;
-            this.searchGrBox.TabStop = false;
-            this.searchGrBox.Text = "Поиск";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Найти запись:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Выбрать поле:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 29);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(370, 28);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(113, 68);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(370, 27);
-            this.textBox1.TabIndex = 0;
             // 
             // idCol
             // 
@@ -314,11 +209,10 @@
             // 
             // serviceIdCol
             // 
-            this.serviceIdCol.HeaderText = "Service Id";
+            this.serviceIdCol.HeaderText = "Услуга";
             this.serviceIdCol.MinimumWidth = 6;
             this.serviceIdCol.Name = "serviceIdCol";
             this.serviceIdCol.ReadOnly = true;
-            this.serviceIdCol.Visible = false;
             this.serviceIdCol.Width = 125;
             // 
             // orderedDateCol
@@ -380,12 +274,37 @@
             this.deleteCol.Name = "deleteCol";
             this.deleteCol.Width = 125;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1214, 921);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1206, 888);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Список";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // OrderedServicesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1089, 921);
+            this.ClientSize = new System.Drawing.Size(1214, 921);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "OrderedServicesWindow";
@@ -398,15 +317,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.searchGrBox.ResumeLayout(false);
-            this.searchGrBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Label label10;
         private TabPage tabPage2;
         private GroupBox groupBox2;
         private Button addBtn;
@@ -417,15 +332,9 @@
         private Label label12;
         private Label label8;
         private Label label9;
-        private TextBox numAddBox;
         private DataGridView dataGridView1;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private GroupBox searchGrBox;
-        private Label label2;
-        private Label label1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
         private DateTimePicker dateTimePicker1;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn serviceIdCol;

@@ -75,7 +75,7 @@ namespace WindowWorldDbSQLite.Views
                     Progress = Convert.ToBoolean(dataGridView[7, e.RowIndex].Value)
                 };
 
-                if()
+                //if()
             }
 
         }
