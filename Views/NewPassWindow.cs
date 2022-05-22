@@ -16,31 +16,38 @@ namespace WindowWorldDbSQLite.Views
     public partial class NewPassWindow : Form
     {
         User mUser = null;
-        UserNewPass newPass;
+        AuthCTRL authCTRL = null;
 
-        public NewPassWindow()
+        public NewPassWindow(User _user)
         {
+            mUser = _user;
+            authCTRL = new AuthCTRL();
             InitializeComponent();
+            this.Text = $"{this.Text} ({mUser.UserName})";
         }
 
         private void newpassBtn_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
-                bool result = newPass.ChangePassword(newpassBox.Text);
-                if (result)
+                if(newpassBox.Text == String.Empty)
                 {
-                    MessageBox.Show("Пароль успешно изменён!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    throw new Exception("Поле пароля не может быь пустым!");
+                }
+                if (authCTRL.UpdateUserPassword(mUser, newpassBox.Text))
+                {
+                    MessageBox.Show("Пароль успешно сменен!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Произошла ошибка! Пароль не был изменён!", "Ошибка!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Произошла ошибка!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }*/
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

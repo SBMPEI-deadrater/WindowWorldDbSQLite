@@ -35,7 +35,6 @@
             this.priceAddBox = new System.Windows.Forms.TextBox();
             this.provisionalDateAddBox = new System.Windows.Forms.TextBox();
             this.customerAddBox = new System.Windows.Forms.TextBox();
-            this.orderDateBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,11 +90,11 @@
             // groupBox2
             // 
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.addBtn);
             this.groupBox2.Controls.Add(this.priceAddBox);
             this.groupBox2.Controls.Add(this.provisionalDateAddBox);
             this.groupBox2.Controls.Add(this.customerAddBox);
-            this.groupBox2.Controls.Add(this.orderDateBox);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label8);
@@ -143,15 +143,6 @@
             this.customerAddBox.Name = "customerAddBox";
             this.customerAddBox.Size = new System.Drawing.Size(477, 27);
             this.customerAddBox.TabIndex = 7;
-            // 
-            // orderDateBox
-            // 
-            this.orderDateBox.Location = new System.Drawing.Point(301, 283);
-            this.orderDateBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.orderDateBox.Name = "orderDateBox";
-            this.orderDateBox.ReadOnly = true;
-            this.orderDateBox.Size = new System.Drawing.Size(477, 27);
-            this.orderDateBox.TabIndex = 6;
             // 
             // label11
             // 
@@ -364,6 +355,13 @@
             this.textBox1.Size = new System.Drawing.Size(370, 27);
             this.textBox1.TabIndex = 0;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(301, 293);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(477, 27);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
             // OrderedServicesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -396,7 +394,6 @@
         private TextBox priceAddBox;
         private TextBox provisionalDateAddBox;
         private TextBox customerAddBox;
-        private TextBox orderDateBox;
         private Label label11;
         private Label label12;
         private Label label8;
@@ -419,5 +416,6 @@
         private DataGridViewCheckBoxColumn isPayedCol;
         private DataGridViewCheckBoxColumn progressCol;
         private DataGridViewButtonColumn deleteCol;
+        private DateTimePicker dateTimePicker1;
     }
 }

@@ -30,13 +30,13 @@ namespace WindowWorldDbSQLite.Views
 
         private void сменаПарольToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*NewPassWindow newPass = new NewPassWindow(mUser);
-            newPass.Show();*/
+            NewPassWindow newPass = new NewPassWindow(mUser);
+            newPass.Show();
         }
 
         private void изделияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GoodsWindow goodsWindow = new GoodsWindow();
+            GoodsWindow goodsWindow = new GoodsWindow(mUser);
             goodsWindow.Show();
         }
 
