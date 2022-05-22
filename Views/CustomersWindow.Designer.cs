@@ -125,6 +125,7 @@
             this.comboSearchBox.Name = "comboSearchBox";
             this.comboSearchBox.Size = new System.Drawing.Size(370, 28);
             this.comboSearchBox.TabIndex = 1;
+            this.comboSearchBox.SelectedIndexChanged += new System.EventHandler(this.comboSearchBox_SelectedIndexChanged);
             // 
             // tabPage1
             // 
