@@ -57,7 +57,8 @@ namespace WindowWorldDbSQLite.Views
                     dataGridView.Columns[5].Visible = false;
                     break;
             }
-            
+
+
             UpdateForm();
         }
 

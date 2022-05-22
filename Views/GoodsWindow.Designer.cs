@@ -162,6 +162,7 @@
             // 
             // comboSearchBox
             // 
+            this.comboSearchBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSearchBox.FormattingEnabled = true;
             this.comboSearchBox.Items.AddRange(new object[] {
             "Общий поиск",
@@ -182,6 +183,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(370, 27);
             this.searchBox.TabIndex = 0;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged_1);
             // 
             // dataGridView
             // 
