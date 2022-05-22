@@ -34,7 +34,7 @@
             this.searchGrBox = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridCustomers = new System.Windows.Forms.DataGridView();
             this.lastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.searchGrBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -118,7 +118,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.searchGrBox);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridCustomers);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
@@ -128,26 +128,26 @@
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridCustomers
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridCustomers.AllowUserToAddRows = false;
+            this.dataGridCustomers.AllowUserToDeleteRows = false;
+            this.dataGridCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lastNameCol,
             this.firstNameCol,
             this.middleNameCol,
             this.adressCol,
             this.phoneNumberCol,
             this.deleteCol});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(904, 697);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridCustomers.Location = new System.Drawing.Point(3, 4);
+            this.dataGridCustomers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridCustomers.Name = "dataGridCustomers";
+            this.dataGridCustomers.RowHeadersWidth = 51;
+            this.dataGridCustomers.RowTemplate.Height = 25;
+            this.dataGridCustomers.Size = new System.Drawing.Size(904, 697);
+            this.dataGridCustomers.TabIndex = 0;
             // 
             // lastNameCol
             // 
@@ -344,10 +344,11 @@
             this.Name = "CustomersWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заказчики";
+            this.Load += new System.EventHandler(this.CustomersWindow_Load);
             this.searchGrBox.ResumeLayout(false);
             this.searchGrBox.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -364,7 +365,7 @@
         private GroupBox searchGrBox;
         private ComboBox comboBox1;
         private TabPage tabPage1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridCustomers;
         private TabControl tabControl1;
         private TabPage tabPage2;
         private GroupBox groupBox2;
