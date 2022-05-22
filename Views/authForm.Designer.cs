@@ -40,7 +40,6 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(201, 27);
             this.usernameBox.TabIndex = 0;
-            this.usernameBox.Text = "admin";
             // 
             // passwordBox
             // 
@@ -49,7 +48,6 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(201, 27);
             this.passwordBox.TabIndex = 1;
-            this.passwordBox.Text = "admin";
             this.passwordBox.UseSystemPasswordChar = true;
             // 
             // loginBtn

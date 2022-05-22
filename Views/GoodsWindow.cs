@@ -135,7 +135,14 @@ namespace WindowWorldDbSQLite.Views
                 }
                 else
                 {
-                    imageBox.Load(obj.PhotoUrl);
+                    try
+                    {
+                        imageBox.Load(obj.PhotoUrl);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
 
@@ -219,27 +226,37 @@ namespace WindowWorldDbSQLite.Views
         private void searchBox_TextChanged_1(object sender, EventArgs e)
         {
             GoodController controller = new GoodController();
-            switch (comboSearchBox.TabIndex)
+            switch (comboSearchBox.SelectedIndex)
             {
-                case 1:
+                case 0:
                     UpdateForm(searchBox.Text, "common");
                     break;
-                case 2:
+                case 1:
                     UpdateForm(searchBox.Text, "company");
                     break;
-                case 3:
+                case 2:
                     UpdateForm(searchBox.Text, "type");
                     break;
-                case 4:
+                case 3:
                     UpdateForm(searchBox.Text, "price");
                     break;
-                case 5:
+                case 4:
                     UpdateForm(searchBox.Text, "name");
                     break;
-                default:
-                    UpdateForm(searchBox.Text, "common");
-                    break;
             }
+        }
+
+        private void ValidateInputSymbols(KeyPressEventArgs e)
+        {
+            if (!((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)ConsoleKey.Backspace || e.KeyChar == ','))
+            {
+                e.KeyChar = '\0';
+            }
+        }
+
+        private void priceAddBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateInputSymbols(e);
         }
     }
 }

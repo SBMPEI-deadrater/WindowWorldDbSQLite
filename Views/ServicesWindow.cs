@@ -50,6 +50,7 @@ namespace WindowWorldDbSQLite.Views
 
         private void ServicesWindow_Load(object sender, EventArgs e)
         {
+            comboSearchBox.SelectedIndex = 0;
             switch (mUser.Role)
             {
                 case "user":
@@ -71,7 +72,7 @@ namespace WindowWorldDbSQLite.Views
                 {
                     Id = Convert.ToInt32(dataGridView[0, e.RowIndex].Value),
                     TypeService = dataGridView[1, e.RowIndex].Value.ToString(),
-                    Price = Convert.ToInt32(dataGridView[2, e.RowIndex].Value),
+                    Price = Convert.ToDecimal(dataGridView[2, e.RowIndex].Value),
                     Progress = Convert.ToBoolean(dataGridView[3, e.RowIndex].Value)
                 };
 
@@ -141,21 +142,28 @@ namespace WindowWorldDbSQLite.Views
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             ServiceController controller = new ServiceController();
-            switch (comboSearchBox.TabIndex)
+            switch (comboSearchBox.SelectedIndex)
             {
-                case 1:
+                case 0:
                     UpdateForm(searchBox.Text, "common");
                     break;
-                case 2:
-                    UpdateForm(searchBox.Text, "type");
-                    break;
-                case 3:
+                case 1:
                     UpdateForm(searchBox.Text, "price");
                     break;
-                default:
-                    UpdateForm(searchBox.Text, "common");
-                    break;
             }
+        }
+
+        private void ValidateInputSymbols(KeyPressEventArgs e)
+        {
+            if (!((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)ConsoleKey.Backspace || e.KeyChar == ','))
+            {
+                e.KeyChar = '\0';
+            }
+        }
+
+        private void priceAddBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateInputSymbols(e);
         }
     }
 }

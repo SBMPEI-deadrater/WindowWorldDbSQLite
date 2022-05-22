@@ -383,6 +383,7 @@
             this.priceAddBox.Name = "priceAddBox";
             this.priceAddBox.Size = new System.Drawing.Size(477, 27);
             this.priceAddBox.TabIndex = 9;
+            this.priceAddBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceAddBox_KeyPress);
             // 
             // typeAddBox
             // 
