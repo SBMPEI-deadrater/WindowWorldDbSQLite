@@ -91,74 +91,8 @@ namespace WindowWorldDbSQLite.Views
                     Progress = Convert.ToBoolean(dataGridView[7, e.RowIndex].Value)
                 };
 
-                if (controller.UpdateSingleGood(obj))
-                {
-                    UpdateForm();
-                }
-                else
-                {
-                    MessageBox.Show("При обновлении ошибка", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if()
             }
-            else
-            {
-                Good obj = new Good
-                {
-                    Id = Convert.ToInt32(dataGridView[0, e.RowIndex].Value),
-                    Name = dataGridView[1, e.RowIndex].Value.ToString(),
-                    Company = dataGridView[2, e.RowIndex].Value.ToString(),
-                    TypeGood = dataGridView[3, e.RowIndex].Value.ToString(),
-                    Price = Convert.ToInt32(dataGridView[4, e.RowIndex].Value),
-                    PhotoUrl = dataGridView[5, e.RowIndex].Value.ToString(),
-                    IsActive = Convert.ToBoolean(dataGridView[6, e.RowIndex].Value),
-                    Progress = Convert.ToBoolean(dataGridView[7, e.RowIndex].Value)
-                };
-
-                if (e.ColumnIndex == 9)
-                {
-                    if (controller.DeleteSingleGood(obj))
-                    {
-                        UpdateForm();
-                    }
-                    else
-                    {
-                        MessageBox.Show("При удалении ошибка", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    imageBox.Load(obj.PhotoUrl);
-                }
-            }
-
-            
-        }
-
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-            GoodController controller = new GoodController();
-            switch (comboSearchBox.TabIndex)
-            {
-                case 1:
-                    UpdateForm(searchBox.Text, "common");
-                    break;
-                case 2:
-                    UpdateForm(searchBox.Text, "company");
-                    break;
-                case 3:
-                    UpdateForm(searchBox.Text, "type");
-                    break;
-                case 4:
-                    UpdateForm(searchBox.Text, "price");
-                    break;
-                case 5:
-                    UpdateForm(searchBox.Text, "name");
-                    break;
-                default:
-                    UpdateForm(searchBox.Text, "common");
-                    break;
-            }
-        }
 
         private void imageAddBox_Click(object sender, EventArgs e)
         {

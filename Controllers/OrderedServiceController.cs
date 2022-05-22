@@ -20,17 +20,17 @@ namespace WindowWorldDbSQLite.Controllers
             {
                 using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
-                    if(search == "")
+                    var list = db.OrderedServices.ToList();
+                    if (search == "")
                     {
-                        orderedServiceList = db.OrderedServices.OrderBy(os => os.Price).ToList();
+                        orderedServiceList = list.OrderBy(os => os.OrderedDate).ToList();
                     }
                     else
                     {
-                        var list = db.OrderedServices.ToList();
                         switch (field)
                         {
                             default:
-                                list = list.OrderBy(os => os.Price).ToList();
+                                orderedServiceList = list.OrderBy(os => os.OrderedDate).ToList();
                                 break;
                         }
                     }

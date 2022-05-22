@@ -28,7 +28,6 @@ namespace WindowWorldDbSQLite
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new authForm());
-            //Application.Run(new GoodsWindow()); 
         }
     }
 }
