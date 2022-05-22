@@ -93,5 +93,29 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+
+        public bool UpdateSingleOrder(Orders obj)
+        {
+            bool result = false;
+
+            try
+            {
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    if(db.Orders.Any(o => o.Id == obj.Id))
+                    {
+                        db.Orders.Update(obj);
+                        db.SaveChanges();
+                        result = true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return result;
+        }
     }
 }

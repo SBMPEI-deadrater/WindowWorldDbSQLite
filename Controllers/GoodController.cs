@@ -148,5 +148,29 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+
+        public bool UpdateSingleGood(Good obj)
+        {
+            bool result = false;
+
+            try
+            {
+                using(_ContextDb db =new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    if(db.Goods.Any(g => g.Id == obj.Id))
+                    {
+                        db.Goods.Update(obj);
+                        db.SaveChanges();
+                        result = true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return result;
+        }
     }
 }
