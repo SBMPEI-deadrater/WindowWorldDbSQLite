@@ -162,6 +162,7 @@
             this.резервноеКопированиеToolStripMenuItem.Name = "резервноеКопированиеToolStripMenuItem";
             this.резервноеКопированиеToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.резервноеКопированиеToolStripMenuItem.Text = "Резервное копирование";
+            this.резервноеКопированиеToolStripMenuItem.Click += new System.EventHandler(this.резервноеКопированиеToolStripMenuItem_Click);
             // 
             // сменаПользователяToolStripMenuItem
             // 

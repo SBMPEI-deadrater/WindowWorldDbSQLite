@@ -79,5 +79,20 @@ namespace WindowWorldDbSQLite.Views
             OrderedServicesWindow orderedServicesWindow = new OrderedServicesWindow(mUser);
             orderedServicesWindow.Show();
         }
+
+        private void резервноеКопированиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using(SettingsDatabase sdb = new SettingsDatabase())
+            {
+                if (sdb.BackupSQLiteDbToDesktop())
+                {
+                    MessageBox.Show("Бэкап удался!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Бэкап не удался!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

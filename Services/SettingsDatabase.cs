@@ -43,7 +43,7 @@ namespace WindowWorldDbSQLite.Services
 
             try
             {
-                string pathToFileDb = this.GetDbPathTofile();
+                string pathToFileDb = this.GetDbPathTofile().ToString().Split('=')[1];
 
                 string pathDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 string guidCode = Guid.NewGuid().ToString();
@@ -55,21 +55,14 @@ namespace WindowWorldDbSQLite.Services
                 if (!Directory.Exists(folderPath.ToString()))
                 {
                     Directory.CreateDirectory(folderPath.ToString());
-
-                    // Копирование файлов
-                    string[] strExtensions = new string[] { ".db", ".db-shm", ".db-wal" }; // Расширения файлов
-
                     // Пути
                     string oldPathFiles = pathToFileDb;
                     string newPathFile = folderPath.ToString();
 
-                    foreach (var ext in strExtensions)
+                    FileInfo fileInfo = new FileInfo(oldPathFiles);
+                    if (fileInfo.Exists)
                     {
-                        FileInfo fileInfo = new FileInfo(oldPathFiles + ext);
-                        if (fileInfo.Exists)
-                        {
-                            fileInfo.CopyTo(newPathFile + "\\" + "sqlite_window_world" + ext);
-                        }
+                        fileInfo.CopyTo(newPathFile + "\\" + "sqlite_window_world.db");
                     }
 
                     result = true;
@@ -94,7 +87,7 @@ namespace WindowWorldDbSQLite.Services
             var config = builder.Build();
             // получаем строку подключения
             string connectionString = config.GetConnectionString("DefaultConnection");
-
+            //MessageBox.Show(connectionString);
             return connectionString;
         }
     }
