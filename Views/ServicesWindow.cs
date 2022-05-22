@@ -15,13 +15,14 @@ using WindowWorldDbSQLite.Views;
 
 namespace WindowWorldDbSQLite.Views
 {
-    public partial class OrderedServicesWindow : Form
+    public partial class ServicesWindow : Form
     {
         User mUser = null;
 
-        public OrderedServicesWindow(User _user)
+        public ServicesWindow(User _user)
         {
             mUser = _user;
+
             InitializeComponent();
         }
     }

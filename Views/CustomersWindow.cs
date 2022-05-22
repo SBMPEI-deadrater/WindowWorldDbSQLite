@@ -7,13 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowWorldDbSQLite.Services;
+using WindowWorldDbSQLite.Database;
+using WindowWorldDbSQLite.Database.Models;
+using WindowWorldDbSQLite.Controllers;
+using WindowWorldDbSQLite.Views;
 
 namespace WindowWorldDbSQLite.Views
 {
     public partial class CustomersWindow : Form
     {
-        public CustomersWindow()
+        User mUser = null;
+
+        public CustomersWindow(User _user)
         {
+            mUser = _user;
             InitializeComponent();
         }
     }

@@ -52,13 +52,13 @@ namespace WindowWorldDbSQLite.Views
 
         private void услугиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OrderedServicesWindow orderedServicesWindow = new OrderedServicesWindow();
-            orderedServicesWindow.Show();
+            ServicesWindow servicesWindow = new ServicesWindow(mUser);
+            servicesWindow.Show();
         }
 
         private void заказчикиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CustomersWindow customersWindow = new CustomersWindow();
+            CustomersWindow customersWindow = new CustomersWindow(mUser);
             customersWindow.Show();
         }
 
@@ -66,6 +66,18 @@ namespace WindowWorldDbSQLite.Views
         {
             this.Close();
             aForm.Show();
+        }
+
+        private void поИзделиямToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderedGoodsWindow ordersWindow = new OrderedGoodsWindow(mUser);
+            ordersWindow.Show();
+        }
+
+        private void поУслугамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderedServicesWindow orderedServicesWindow = new OrderedServicesWindow(mUser);
+            orderedServicesWindow.Show();
         }
     }
 }
