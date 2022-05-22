@@ -11,6 +11,7 @@ using WindowWorldDbSQLite.Database.Models;
 
 namespace WindowWorldDbSQLite.Database.Models
 {
+    [Table("Service")]
     public class Service : BaseEntity
     {
         [Column("type_service", Order = 1)]

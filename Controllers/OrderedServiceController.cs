@@ -131,5 +131,53 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+
+        public List<OrderedServiceForMaxProfit> GetOrderedServicesMaxProfitForDocx(DateTime start, DateTime end)
+        {
+            List<OrderedServiceForMaxProfit> result = new List<OrderedServiceForMaxProfit>();
+            List<OrderedService> myList = null;
+
+            try
+            {
+                CustomerContrller customerContrller = new CustomerContrller();
+                ServiceController serviceController = new ServiceController();
+
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    var list = db.OrderedServices.ToList();
+                    myList = list
+                        .Where(
+                            os => (os.OrderedDate >= start && os.OrderedDate <= end) && (os.ReleaseDate > os.ProvisionalReleaseDate)
+                        ).OrderBy(os => os.OrderedDate).ToList();
+                }
+
+                if(myList != null && myList.Count > 0)
+                {
+                    foreach(var item in myList)
+                    {
+                        var service = serviceController.GetSingleService(item.ServiceId);
+                        var customer = customerContrller.GetSingleCustomer(item.CustomerId);
+
+                        result.Add(new OrderedServiceForMaxProfit
+                        {
+                            ServiceItem = service,
+                            OrderedDate = item.OrderedDate,
+                            CustomerItem = customer,
+                            ProvisionalReleaseDate = item.ProvisionalReleaseDate,
+                            ReleaseDate = item.ReleaseDate,
+                            Price = item.Price,
+                            IsPayed = item.IsPayed,
+                            Progress = item.Progress
+                        });
+                    }
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+            return result;
+        }
     }
 }

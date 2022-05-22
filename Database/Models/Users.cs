@@ -13,7 +13,7 @@ namespace WindowWorldDbSQLite.Database.Models
     /// <summary>
     /// Таблица пользователей
     /// </summary>
-    [Table("Users")]
+    [Table("users")]
     public class User: BaseEntity
     {
         [Column("username", Order = 1)]

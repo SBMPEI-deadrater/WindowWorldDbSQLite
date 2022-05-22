@@ -117,5 +117,53 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+
+        public List<OrdersForDocx> GetOrdersForDocx(DateTime start, DateTime end)
+        {
+            List<OrdersForDocx> result = new List<OrdersForDocx>();
+            List<Orders> myList = null;
+
+            try
+            {
+                GoodController goodController = new GoodController();
+                CustomerContrller customerContrller = new CustomerContrller();
+
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    var list = db.Orders.ToList();
+                    myList = list
+                        .Where(
+                            o => (o.DateOrder >= start && o.DateOrder <= end)
+                        ).OrderBy(o => o.DateOrder).ToList();
+                }
+
+                if(myList != null && myList.Count > 0)
+                {
+                    foreach (var order in myList)
+                    {
+                        var good = goodController.GetSingleGood(order.GoodId);
+                        var customer = customerContrller.GetSingleCustomer(order.CustomerId);
+
+                        result.Add(new OrdersForDocx
+                        {
+                            GoodItem = good,
+                            DateOrder = order.DateOrder,
+                            CustomerItem = customer,
+                            ProvisionalReleaseDate = order.ProvisionalReleaseDate,
+                            ReleaseDate = order.ReleaseDate,
+                            OrderPrice = order.OrderPrice,
+                            IsPayed = order.IsPayed,
+                            OrderProgress = order.OrderProgress
+                        });
+                    }
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+            return result;
+        }
     }
 }
