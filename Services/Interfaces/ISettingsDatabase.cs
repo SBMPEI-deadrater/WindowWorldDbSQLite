@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowWorldDbSQLite.Services.Interfaces
 {
-    internal interface IFaceBackupDatabase: IDisposable
+    internal interface ISettingsDatabase: IDisposable
     {
         bool BackupSQLiteDbToDesktop(string _path);
     }

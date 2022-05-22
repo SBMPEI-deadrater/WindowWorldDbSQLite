@@ -207,10 +207,38 @@ namespace WindowWorldDbSQLite.Database
                     new Service
                     {
                         Id = 1,
-                        TypeService = "",
-                        Price = 1M,
-                        Progress = true
+                        TypeService = "Установка окна",
+                        Price = 3999.50M,
+                        Progress = false
                     },
+                    new Service
+                    {
+                        Id = 2,
+                        TypeService = "Установка двери",
+                        Price = 1999.50M,
+                        Progress = false
+                    },
+                    new Service
+                    {
+                        Id = 3,
+                        TypeService = "Остекление балкона",
+                        Price = 7999.50M,
+                        Progress = false
+                    },
+                    new Service
+                    {
+                        Id = 4,
+                        TypeService = "Замер",
+                        Price = 499.50M,
+                        Progress = false
+                    },
+                    new Service
+                    {
+                        Id = 5,
+                        TypeService = "Доставка по городу",
+                        Price = 999.50M,
+                        Progress = false
+                    }
                 };
 
                 _context.Services.AddRange(items);
@@ -224,11 +252,110 @@ namespace WindowWorldDbSQLite.Database
                     new Customer
                     {
                         Id = 1,
-                        LastName = "",
-                        FirstName = "",
-                        MiddleName = "",
-                        Adress = "",
-                        PhoneNumber = "+7(999)999-99-99"
+                        LastName = "Ветров",
+                        FirstName = "Дмитрий",
+                        MiddleName = "Александрович",
+                        Adress = "Смоленск, ул. Чехова, 71",
+                        PhoneNumber = "+7 (900) 111-11-11"
+                    },
+                    new Customer
+                    {
+                        Id = 2,
+                        LastName = "Воротилова",
+                        FirstName = "Маргарита",
+                        MiddleName = "Юрьевна",
+                        Adress = "Смоленск, ул. Жюля Верна, 59",
+                        PhoneNumber = "+7 (900) 222-22-22"
+                    },
+                    new Customer
+                    {
+                        Id = 3,
+                        LastName = "Дружинина",
+                        FirstName = "Валерия",
+                        MiddleName = "Андреевна",
+                        Adress = "Смоленск, шоссе Достоевского, 72",
+                        PhoneNumber = "+7 (900) 333-33-33"
+                    },
+                    new Customer
+                    {
+                        Id = 4,
+                        LastName = "Зинкевич",
+                        FirstName = "Никита",
+                        MiddleName = "Сергеевич",
+                        Adress = "Смоленск, шоссе Блока, 66",
+                        PhoneNumber = "+7 (900) 444-44-44"
+                    },
+                    new Customer
+                    {
+                        Id = 5,
+                        LastName = "Избанова",
+                        FirstName = "Ольга",
+                        MiddleName = "Евгеньевна",
+                        Adress = "Рудня, спуск Бианки, 49",
+                        PhoneNumber = "+7 (900) 555-55-55"
+                    },
+                    new Customer
+                    {
+                        Id = 6,
+                        LastName = "Кулакова",
+                        FirstName = "Яна",
+                        MiddleName = "Алексеевна",
+                        Adress = "Смоленск, ул. Рыленкова, 49а",
+                        PhoneNumber = "+7 (900) 666-66-66"
+                    },
+                    new Customer
+                    {
+                        Id = 7,
+                        LastName = "Михайлова",
+                        FirstName = "Ангелина",
+                        MiddleName = "Дмитриевна",
+                        Adress = "Смоленск, пр. Пушкина, 37",
+                        PhoneNumber = "+7 (900) 777-77-77"
+                    },
+                    new Customer
+                    {
+                        Id = 8,
+                        LastName = "Оноприенко",
+                        FirstName = "Анастасия",
+                        MiddleName = "Геннадьевна",
+                        Adress = "Рославль, пер. Джека Лондона, 47",
+                        PhoneNumber = "+7 (900) 888-88-88"
+                    },
+                    new Customer
+                    {
+                        Id = 9,
+                        LastName = "Лазарев",
+                        FirstName = "Алексей",
+                        MiddleName = "Игоревич",
+                        Adress = "Смоленск, пр. Островского, 76",
+                        PhoneNumber = "+7 (900) 999-99-99"
+                    },
+                    new Customer
+                    {
+                        Id = 10,
+                        LastName = "Протаскина",
+                        FirstName = "Оксана",
+                        MiddleName = "Юрьевна",
+                        Adress = "Смоленск, ул. Гоголя, 15",
+                        PhoneNumber = "+7 (900) 100-10-10"
+                    },
+                    new Customer
+                    {
+                        Id = 11,
+                        LastName = "Трофимов",
+                        FirstName = "Александр",
+                        MiddleName = "Александрович",
+                        Adress = "Починок, наб. Толстого, 74",
+                        PhoneNumber = "+7 (900) 110-11-11"
+                    },
+                    new Customer
+                    {
+                        Id = 12,
+                        LastName = "Харламов",
+                        FirstName = "Павел",
+                        MiddleName = "Сергеевич",
+                        Adress = "Смоленск, пл. Ломоносова, 39",
+                        PhoneNumber = "+7 (900) 120-12-12"
                     }
                 };
 
@@ -243,15 +370,99 @@ namespace WindowWorldDbSQLite.Database
                     new Orders
                     {
                         Id = 1,
-                        GoodId = 1,
-                        DateOrder = new DateTime(2022, 05, 22),
+                        GoodId = 3,
+                        DateOrder = new DateTime(2022, 02, 01),
                         CustomerId = 1,
-                        ProvisionalReleaseDate = new DateTime(2022, 05, 22),
-                        ReleaseDate = new DateTime(2022, 05, 22),
-                        OrderPrice = 1M,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 05),
+                        ReleaseDate = new DateTime(2022, 02, 07),
+                        OrderPrice = 16399.50M,
                         IsPayed = true,
-                        OrderProgress = true
+                        OrderProgress = false
                     },
+                    new Orders
+                    {
+                        Id = 2,
+                        GoodId = 4,
+                        DateOrder = new DateTime(2022, 02, 02),
+                        CustomerId = 2,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 06),
+                        ReleaseDate = new DateTime(2022, 02, 07),
+                        OrderPrice = 14899.50M,
+                        IsPayed = true,
+                        OrderProgress = false
+                    },
+                    new Orders
+                    {
+                        Id = 3,
+                        GoodId = 11,
+                        DateOrder = new DateTime(2022, 02, 02),
+                        CustomerId = 6,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 06),
+                        ReleaseDate = new DateTime(2022, 02, 07),
+                        OrderPrice = 8999.50M,
+                        IsPayed = false,
+                        OrderProgress = false
+                    },
+                    new Orders
+                    {
+                        Id = 4,
+                        GoodId = 1,
+                        DateOrder = new DateTime(2022, 02, 03),
+                        CustomerId = 1,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 07),
+                        ReleaseDate = new DateTime(2022, 02, 07),
+                        OrderPrice = 9599.50M,
+                        IsPayed = false,
+                        OrderProgress = false
+                    },
+                    new Orders
+                    {
+                        Id = 5,
+                        GoodId = 9,
+                        DateOrder = new DateTime(2022, 02, 04),
+                        CustomerId = 11,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 08),
+                        ReleaseDate = new DateTime(2022, 02, 08),
+                        OrderPrice = 30499.50M,
+                        IsPayed = true,
+                        OrderProgress = false
+                    },
+                    new Orders
+                    {
+                        Id = 6,
+                        GoodId = 10,
+                        DateOrder = new DateTime(2022, 02, 04),
+                        CustomerId = 7,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 08),
+                        ReleaseDate = new DateTime(2022, 02, 08),
+                        OrderPrice = 7799.50M,
+                        IsPayed = true,
+                        OrderProgress = false
+                    },
+                    new Orders
+                    {
+                        Id = 7,
+                        GoodId = 5,
+                        DateOrder = new DateTime(2022, 02, 07),
+                        CustomerId = 9,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 10),
+                        ReleaseDate = new DateTime(2022, 02, 11),
+                        OrderPrice = 20999.50M,
+                        IsPayed = false,
+                        OrderProgress = false
+                    },
+                    new Orders
+                    {
+                        Id = 8,
+                        GoodId = 1,
+                        DateOrder = new DateTime(2022, 02, 09),
+                        CustomerId = 6,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 12),
+                        ReleaseDate = new DateTime(2022, 02, 12),
+                        OrderPrice = 21399.50M,
+                        IsPayed = false,
+                        OrderProgress = false
+                    }
                 };
 
                 _context.Orders.AddRange(items);
@@ -264,16 +475,52 @@ namespace WindowWorldDbSQLite.Database
                 {
                     new OrderedService
                     {
-                        Id =1,
+                        Id = 1,
                         ServiceId = 1,
-                        OrderedDate = new DateTime(2022, 05, 22),
-                        CustomerId = 1,
-                        ProvisionalReleaseDate = new DateTime(2022, 05, 22),
-                        ReleaseDate = new DateTime(2022, 05, 22),
-                        Price = 1M,
+                        OrderedDate = new DateTime(2022, 02, 02),
+                        CustomerId = 3,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 07),
+                        ReleaseDate = new DateTime(2022, 02, 06),
+                        Price = 3999.50M,
                         IsPayed = true,
-                        Progress = true
+                        Progress = false
                     },
+                    new OrderedService
+                    {
+                        Id = 2,
+                        ServiceId = 1,
+                        OrderedDate = new DateTime(2022, 02, 03),
+                        CustomerId = 1,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 07),
+                        ReleaseDate = new DateTime(2022, 02, 07),
+                        Price = 3999.50M,
+                        IsPayed = true,
+                        Progress = false
+                    },
+                    new OrderedService
+                    {
+                        Id = 3,
+                        ServiceId = 1,
+                        OrderedDate = new DateTime(2022, 02, 07),
+                        CustomerId = 9,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 11),
+                        ReleaseDate = new DateTime(2022, 02, 10),
+                        Price = 3999.50M,
+                        IsPayed = true,
+                        Progress = false
+                    },
+                    new OrderedService
+                    {
+                        Id = 4,
+                        ServiceId = 2,
+                        OrderedDate = new DateTime(2022, 02, 08),
+                        CustomerId = 12,
+                        ProvisionalReleaseDate = new DateTime(2022, 02, 11),
+                        ReleaseDate = new DateTime(2022, 02, 11),
+                        Price = 1999.50M,
+                        IsPayed = false,
+                        Progress = false
+                    }
                 };
 
                 _context.AddRange(items);
