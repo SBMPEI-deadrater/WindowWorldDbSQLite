@@ -1,6 +1,6 @@
 ﻿namespace WindowWorldDbSQLite.Views
 {
-    partial class CustomersWindow
+    partial class OrderedGoodsWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -34,30 +34,33 @@
             this.searchGrBox = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridCustomers = new System.Windows.Forms.DataGridView();
-            this.lastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.goodIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderedDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provisionReleaseDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.releaseDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPayedCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.phoneNumberAddBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.addBtn = new System.Windows.Forms.Button();
-            this.adressAddBox = new System.Windows.Forms.TextBox();
-            this.middleNameAddBox = new System.Windows.Forms.TextBox();
-            this.firstnameAddBox = new System.Windows.Forms.TextBox();
-            this.lastNameAddBox = new System.Windows.Forms.TextBox();
+            this.priceAddBox = new System.Windows.Forms.TextBox();
+            this.provisionalDateAddBox = new System.Windows.Forms.TextBox();
+            this.customerAddBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numAddBox = new System.Windows.Forms.TextBox();
             this.searchGrBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,11 +100,11 @@
             this.searchGrBox.Controls.Add(this.comboBox1);
             this.searchGrBox.Controls.Add(this.textBox1);
             this.searchGrBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchGrBox.Location = new System.Drawing.Point(3, 589);
+            this.searchGrBox.Location = new System.Drawing.Point(3, 525);
             this.searchGrBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchGrBox.Name = "searchGrBox";
             this.searchGrBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchGrBox.Size = new System.Drawing.Size(904, 112);
+            this.searchGrBox.Size = new System.Drawing.Size(1084, 112);
             this.searchGrBox.TabIndex = 1;
             this.searchGrBox.TabStop = false;
             this.searchGrBox.Text = "Поиск";
@@ -118,71 +121,97 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.searchGrBox);
-            this.tabPage1.Controls.Add(this.dataGridCustomers);
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(910, 705);
+            this.tabPage1.Size = new System.Drawing.Size(1090, 641);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridCustomers
+            // dataGridView1
             // 
-            this.dataGridCustomers.AllowUserToAddRows = false;
-            this.dataGridCustomers.AllowUserToDeleteRows = false;
-            this.dataGridCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lastNameCol,
-            this.firstNameCol,
-            this.middleNameCol,
-            this.adressCol,
-            this.phoneNumberCol,
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.goodIdCol,
+            this.orderedDateCol,
+            this.customerIdCol,
+            this.provisionReleaseDateCol,
+            this.releaseDateCol,
+            this.priceCol,
+            this.isPayedCol,
+            this.progressCol,
             this.deleteCol});
-            this.dataGridCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridCustomers.Location = new System.Drawing.Point(3, 4);
-            this.dataGridCustomers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridCustomers.Name = "dataGridCustomers";
-            this.dataGridCustomers.RowHeadersWidth = 51;
-            this.dataGridCustomers.RowTemplate.Height = 25;
-            this.dataGridCustomers.Size = new System.Drawing.Size(904, 697);
-            this.dataGridCustomers.TabIndex = 0;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(1084, 633);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // lastNameCol
+            // goodIdCol
             // 
-            this.lastNameCol.HeaderText = "Фамилия";
-            this.lastNameCol.MinimumWidth = 6;
-            this.lastNameCol.Name = "lastNameCol";
-            this.lastNameCol.Width = 125;
+            this.goodIdCol.HeaderText = "Service Id";
+            this.goodIdCol.MinimumWidth = 6;
+            this.goodIdCol.Name = "goodIdCol";
+            this.goodIdCol.ReadOnly = true;
+            this.goodIdCol.Visible = false;
+            this.goodIdCol.Width = 125;
             // 
-            // firstNameCol
+            // orderedDateCol
             // 
-            this.firstNameCol.HeaderText = "Имя";
-            this.firstNameCol.MinimumWidth = 6;
-            this.firstNameCol.Name = "firstNameCol";
-            this.firstNameCol.Width = 125;
+            this.orderedDateCol.HeaderText = "Дата заказа";
+            this.orderedDateCol.MinimumWidth = 6;
+            this.orderedDateCol.Name = "orderedDateCol";
+            this.orderedDateCol.Width = 125;
             // 
-            // middleNameCol
+            // customerIdCol
             // 
-            this.middleNameCol.HeaderText = "Отчество";
-            this.middleNameCol.MinimumWidth = 6;
-            this.middleNameCol.Name = "middleNameCol";
-            this.middleNameCol.Width = 125;
+            this.customerIdCol.HeaderText = "Заказчик";
+            this.customerIdCol.MinimumWidth = 6;
+            this.customerIdCol.Name = "customerIdCol";
+            this.customerIdCol.Width = 125;
             // 
-            // adressCol
+            // provisionReleaseDateCol
             // 
-            this.adressCol.HeaderText = "Адрес";
-            this.adressCol.MinimumWidth = 6;
-            this.adressCol.Name = "adressCol";
-            this.adressCol.Width = 125;
+            this.provisionReleaseDateCol.HeaderText = "Предпол. дата выполнения";
+            this.provisionReleaseDateCol.MinimumWidth = 6;
+            this.provisionReleaseDateCol.Name = "provisionReleaseDateCol";
+            this.provisionReleaseDateCol.Width = 125;
             // 
-            // phoneNumberCol
+            // releaseDateCol
             // 
-            this.phoneNumberCol.HeaderText = "Номер телефона";
-            this.phoneNumberCol.MinimumWidth = 6;
-            this.phoneNumberCol.Name = "phoneNumberCol";
-            this.phoneNumberCol.Width = 200;
+            this.releaseDateCol.HeaderText = "Дата выполнения";
+            this.releaseDateCol.MinimumWidth = 6;
+            this.releaseDateCol.Name = "releaseDateCol";
+            this.releaseDateCol.Width = 125;
+            // 
+            // priceCol
+            // 
+            this.priceCol.HeaderText = "Цена, руб.";
+            this.priceCol.MinimumWidth = 6;
+            this.priceCol.Name = "priceCol";
+            this.priceCol.Width = 125;
+            // 
+            // isPayedCol
+            // 
+            this.isPayedCol.HeaderText = "Оплчачено";
+            this.isPayedCol.MinimumWidth = 6;
+            this.isPayedCol.Name = "isPayedCol";
+            this.isPayedCol.Width = 125;
+            // 
+            // progressCol
+            // 
+            this.progressCol.HeaderText = "В работе";
+            this.progressCol.MinimumWidth = 6;
+            this.progressCol.Name = "progressCol";
+            this.progressCol.Width = 125;
             // 
             // deleteCol
             // 
@@ -200,7 +229,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(918, 738);
+            this.tabControl1.Size = new System.Drawing.Size(1098, 674);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
@@ -211,7 +240,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(910, 705);
+            this.tabPage2.Size = new System.Drawing.Size(1090, 641);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -219,46 +248,36 @@
             // groupBox2
             // 
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox2.Controls.Add(this.phoneNumberAddBox);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.addBtn);
-            this.groupBox2.Controls.Add(this.adressAddBox);
-            this.groupBox2.Controls.Add(this.middleNameAddBox);
-            this.groupBox2.Controls.Add(this.firstnameAddBox);
-            this.groupBox2.Controls.Add(this.lastNameAddBox);
+            this.groupBox2.Controls.Add(this.priceAddBox);
+            this.groupBox2.Controls.Add(this.provisionalDateAddBox);
+            this.groupBox2.Controls.Add(this.customerAddBox);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.numAddBox);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 4);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(904, 697);
+            this.groupBox2.Size = new System.Drawing.Size(1084, 633);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
-            // phoneNumberAddBox
+            // dateTimePicker1
             // 
-            this.phoneNumberAddBox.Location = new System.Drawing.Point(197, 461);
-            this.phoneNumberAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.phoneNumberAddBox.Name = "phoneNumberAddBox";
-            this.phoneNumberAddBox.Size = new System.Drawing.Size(477, 27);
-            this.phoneNumberAddBox.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(197, 439);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 20);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Номер телефона";
+            this.dateTimePicker1.Location = new System.Drawing.Point(301, 293);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(477, 27);
+            this.dateTimePicker1.TabIndex = 14;
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(197, 496);
+            this.addBtn.Location = new System.Drawing.Point(301, 539);
             this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(478, 52);
@@ -266,89 +285,98 @@
             this.addBtn.Text = "Добавить запись";
             this.addBtn.UseVisualStyleBackColor = true;
             // 
-            // adressAddBox
+            // priceAddBox
             // 
-            this.adressAddBox.Location = new System.Drawing.Point(197, 392);
-            this.adressAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adressAddBox.Name = "adressAddBox";
-            this.adressAddBox.Size = new System.Drawing.Size(477, 27);
-            this.adressAddBox.TabIndex = 9;
+            this.priceAddBox.Location = new System.Drawing.Point(301, 500);
+            this.priceAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.priceAddBox.Name = "priceAddBox";
+            this.priceAddBox.Size = new System.Drawing.Size(477, 27);
+            this.priceAddBox.TabIndex = 9;
             // 
-            // middleNameAddBox
+            // provisionalDateAddBox
             // 
-            this.middleNameAddBox.Location = new System.Drawing.Point(197, 320);
-            this.middleNameAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.middleNameAddBox.Name = "middleNameAddBox";
-            this.middleNameAddBox.Size = new System.Drawing.Size(477, 27);
-            this.middleNameAddBox.TabIndex = 8;
+            this.provisionalDateAddBox.Location = new System.Drawing.Point(301, 428);
+            this.provisionalDateAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.provisionalDateAddBox.Name = "provisionalDateAddBox";
+            this.provisionalDateAddBox.Size = new System.Drawing.Size(477, 27);
+            this.provisionalDateAddBox.TabIndex = 8;
             // 
-            // firstnameAddBox
+            // customerAddBox
             // 
-            this.firstnameAddBox.Location = new System.Drawing.Point(197, 249);
-            this.firstnameAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.firstnameAddBox.Name = "firstnameAddBox";
-            this.firstnameAddBox.Size = new System.Drawing.Size(477, 27);
-            this.firstnameAddBox.TabIndex = 7;
-            // 
-            // lastNameAddBox
-            // 
-            this.lastNameAddBox.Location = new System.Drawing.Point(197, 175);
-            this.lastNameAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lastNameAddBox.Name = "lastNameAddBox";
-            this.lastNameAddBox.Size = new System.Drawing.Size(477, 27);
-            this.lastNameAddBox.TabIndex = 6;
+            this.customerAddBox.Location = new System.Drawing.Point(301, 357);
+            this.customerAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customerAddBox.Name = "customerAddBox";
+            this.customerAddBox.Size = new System.Drawing.Size(477, 27);
+            this.customerAddBox.TabIndex = 7;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(197, 370);
+            this.label11.Location = new System.Drawing.Point(301, 478);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 20);
+            this.label11.Size = new System.Drawing.Size(170, 20);
             this.label11.TabIndex = 5;
-            this.label11.Text = "Адрес";
+            this.label11.Text = "Стоимость товара, руб.";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(197, 298);
+            this.label12.Location = new System.Drawing.Point(301, 406);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 20);
+            this.label12.Size = new System.Drawing.Size(281, 20);
             this.label12.TabIndex = 4;
-            this.label12.Text = "Отчество";
+            this.label12.Text = "Предположительная дата выполнения";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(197, 227);
+            this.label8.Location = new System.Drawing.Point(301, 335);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 20);
+            this.label8.Size = new System.Drawing.Size(71, 20);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Имя";
+            this.label8.Text = "Заказчик";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(197, 153);
+            this.label9.Location = new System.Drawing.Point(301, 261);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 20);
+            this.label9.Size = new System.Drawing.Size(90, 20);
             this.label9.TabIndex = 2;
-            this.label9.Text = "Фамилия";
+            this.label9.Text = "Дата заказа";
             // 
-            // CustomersWindow
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(566, 211);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Код товара";
+            // 
+            // numAddBox
+            // 
+            this.numAddBox.Location = new System.Drawing.Point(657, 205);
+            this.numAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numAddBox.Name = "numAddBox";
+            this.numAddBox.Size = new System.Drawing.Size(114, 27);
+            this.numAddBox.TabIndex = 0;
+            // 
+            // OrderedGoodsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 738);
+            this.ClientSize = new System.Drawing.Size(1098, 674);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "CustomersWindow";
+            this.MaximizeBox = false;
+            this.Name = "OrderedGoodsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Заказчики";
-            this.Load += new System.EventHandler(this.CustomersWindow_Load);
+            this.Text = "Заказы по товарам";
             this.searchGrBox.ResumeLayout(false);
             this.searchGrBox.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -365,26 +393,29 @@
         private GroupBox searchGrBox;
         private ComboBox comboBox1;
         private TabPage tabPage1;
-        private DataGridView dataGridCustomers;
+        private DataGridView dataGridView1;
         private TabControl tabControl1;
         private TabPage tabPage2;
         private GroupBox groupBox2;
+        private DateTimePicker dateTimePicker1;
         private Button addBtn;
-        private TextBox adressAddBox;
-        private TextBox middleNameAddBox;
-        private TextBox firstnameAddBox;
-        private TextBox lastNameAddBox;
+        private TextBox priceAddBox;
+        private TextBox provisionalDateAddBox;
+        private TextBox customerAddBox;
         private Label label11;
         private Label label12;
         private Label label8;
         private Label label9;
-        private TextBox phoneNumberAddBox;
-        private Label label3;
-        private DataGridViewTextBoxColumn lastNameCol;
-        private DataGridViewTextBoxColumn firstNameCol;
-        private DataGridViewTextBoxColumn middleNameCol;
-        private DataGridViewTextBoxColumn adressCol;
-        private DataGridViewTextBoxColumn phoneNumberCol;
+        private Label label10;
+        private TextBox numAddBox;
+        private DataGridViewTextBoxColumn goodIdCol;
+        private DataGridViewTextBoxColumn orderedDateCol;
+        private DataGridViewTextBoxColumn customerIdCol;
+        private DataGridViewTextBoxColumn provisionReleaseDateCol;
+        private DataGridViewTextBoxColumn releaseDateCol;
+        private DataGridViewTextBoxColumn priceCol;
+        private DataGridViewCheckBoxColumn isPayedCol;
+        private DataGridViewCheckBoxColumn progressCol;
         private DataGridViewButtonColumn deleteCol;
     }
 }
