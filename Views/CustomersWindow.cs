@@ -194,5 +194,10 @@ namespace WindowWorldDbSQLite.Views
                     break;
             }
         }
+
+        private void comboSearchBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
