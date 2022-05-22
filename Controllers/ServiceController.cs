@@ -21,7 +21,7 @@ namespace WindowWorldDbSQLite.Controllers
             {
                 using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
-                    if(search != "")
+                    if(search == "")
                     {
                         services = db.Services.OrderBy(s => s.TypeService).ToList();
                     }
