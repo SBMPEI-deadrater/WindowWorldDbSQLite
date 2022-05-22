@@ -100,5 +100,15 @@ namespace WindowWorldDbSQLite.Views
                 }
             }
         }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            switch (mUser.Role)
+            {
+                case "user":
+                    резервноеКопированиеToolStripMenuItem.Available = false;
+                    break;
+            }
+        }
     }
 }

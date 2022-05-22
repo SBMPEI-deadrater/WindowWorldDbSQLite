@@ -72,6 +72,8 @@ namespace WindowWorldDbSQLite.Views
 
         private void GoodsWindow_Load(object sender, EventArgs e)
         {
+            dataGridView.Columns[8].Visible = false;
+            dataGridView.Columns[9].Visible = false;
             UpdateForm();
         }
 
