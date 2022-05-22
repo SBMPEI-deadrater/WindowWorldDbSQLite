@@ -80,6 +80,12 @@ namespace WindowWorldDbSQLite.Views
             orderedServicesWindow.Show();
         }
 
+        private void отчетыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportWindow reportWindow = new ReportWindow(mUser);
+            reportWindow.Show();
+        }
+
         private void резервноеКопированиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using(SettingsDatabase sdb = new SettingsDatabase())
