@@ -35,6 +35,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -50,7 +51,6 @@
             this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.saveCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.addBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -109,6 +109,17 @@
             this.groupBox2.Size = new System.Drawing.Size(685, 649);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(101, 363);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(478, 52);
+            this.addBtn.TabIndex = 13;
+            this.addBtn.Text = "Добавить запись";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // tabPage2
             // 
@@ -204,6 +215,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(370, 27);
             this.searchBox.TabIndex = 0;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // dataGridView
             // 
@@ -282,17 +294,6 @@
             this.deleteCol.MinimumWidth = 6;
             this.deleteCol.Name = "deleteCol";
             this.deleteCol.Width = 90;
-            // 
-            // addBtn
-            // 
-            this.addBtn.Location = new System.Drawing.Point(101, 363);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(478, 52);
-            this.addBtn.TabIndex = 13;
-            this.addBtn.Text = "Добавить запись";
-            this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // ServicesWindow
             // 

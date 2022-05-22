@@ -128,5 +128,25 @@ namespace WindowWorldDbSQLite.Views
                 }
             }
         }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            ServiceController controller = new ServiceController();
+            switch (comboSearchBox.TabIndex)
+            {
+                case 1:
+                    UpdateForm(searchBox.Text, "common");
+                    break;
+                case 2:
+                    UpdateForm(searchBox.Text, "type");
+                    break;
+                case 3:
+                    UpdateForm(searchBox.Text, "price");
+                    break;
+                default:
+                    UpdateForm(searchBox.Text, "common");
+                    break;
+            }
+        }
     }
 }
