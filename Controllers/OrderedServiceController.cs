@@ -107,5 +107,29 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+
+        public bool UpdateSingleOrderedService(OrderedService obj)
+        {
+            bool result = false;
+
+            try
+            {
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    if(db.OrderedServices.Any(os => os.Id == obj.Id))
+                    {
+                        db.OrderedServices.Update(obj);
+                        db.SaveChanges();
+                        result = true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return result;
+        }
     }
 }

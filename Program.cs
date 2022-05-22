@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using WindowWorldDbSQLite.Database;
 using WindowWorldDbSQLite.Views;
 using WindowWorldDbSQLite.Services;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace WindowWorldDbSQLite
 {
@@ -22,8 +24,8 @@ namespace WindowWorldDbSQLite
                 dBIni.DefaultGeneration();
             }
 
-                // To customize application configuration such as set high DPI settings or default font,
-                // see https://aka.ms/applicationconfiguration.
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new authForm());
         }

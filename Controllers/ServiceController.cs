@@ -123,5 +123,29 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+
+        public bool UpdateSingleService(Service obj)
+        {
+            bool result = true;
+
+            try
+            {
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    if(db.Services.Any(s => s.Id == obj.Id))
+                    {
+                        db.Services.Update(obj);
+                        db.SaveChanges();
+                        result = true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return result;
+        }
     }
 }

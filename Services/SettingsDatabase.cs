@@ -11,8 +11,12 @@ using WindowWorldDbSQLite.Services.Interfaces;
 
 namespace WindowWorldDbSQLite.Services
 {
-    internal class SettingsDatabase : ISettingsDatabase
+    public class SettingsDatabase : ISettingsDatabase
     {
+        public void Dispose()
+        {
+        }
+
         // Объект настройки БД
         public DbContextOptions<_ContextDb> GetDbContextOptions()
         {
@@ -31,29 +35,67 @@ namespace WindowWorldDbSQLite.Services
             return options;
         }
 
-        public bool BackupSQLiteDbToDesktop(string _path)
+
+
+        public bool BackupSQLiteDbToDesktop()
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            try
+            {
+                string pathToFileDb = this.GetDbPathTofile();
+
+                string pathDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string guidCode = Guid.NewGuid().ToString();
+                string shortDate = DateTime.Now.ToShortDateString();
+
+                StringBuilder folderPath = new StringBuilder();
+                folderPath.Append(pathDesktop + "\\" + "sqlite_window_world" + "_" + shortDate.Replace('.', '-') + "_" + guidCode);
+
+                if (!Directory.Exists(folderPath.ToString()))
+                {
+                    Directory.CreateDirectory(folderPath.ToString());
+
+                    // Копирование файлов
+                    string[] strExtensions = new string[] { ".db", ".db-shm", ".db-wal" }; // Расширения файлов
+
+                    // Пути
+                    string oldPathFiles = pathToFileDb;
+                    string newPathFile = folderPath.ToString();
+
+                    foreach (var ext in strExtensions)
+                    {
+                        FileInfo fileInfo = new FileInfo(oldPathFiles + ext);
+                        if (fileInfo.Exists)
+                        {
+                            fileInfo.CopyTo(newPathFile + "\\" + "sqlite_window_world" + ext);
+                        }
+                    }
+
+                    result = true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return result;
         }
 
-        // Объект настройки БД
-        //public string GetDbConnectionString()
-        //{
-        //    var builder = new ConfigurationBuilder();
-        //    // установка пути к текущему каталогу
-        //    builder.SetBasePath(Directory.GetCurrentDirectory());
-        //    // получаем конфигурацию из файла appsettings.json
-        //    builder.AddJsonFile("appsettings.json");
-        //    // создаем конфигурацию
-        //    var config = builder.Build();
-        //    // получаем строку подключения
-        //    string connectionString = config.GetConnectionString("DefaultConnection");
-
-        //    return connectionString;
-        //}
-
-        public void Dispose()
+        public string GetDbPathTofile()
         {
+            var builder = new ConfigurationBuilder();
+            // установка пути к текущему каталогу
+            builder.SetBasePath(Directory.GetCurrentDirectory());
+            // получаем конфигурацию из файла appsettings.json
+            builder.AddJsonFile("Config\\appsettings.json");
+            // создаем конфигурацию
+            var config = builder.Build();
+            // получаем строку подключения
+            string connectionString = config.GetConnectionString("DefaultConnection");
+
+            return connectionString;
         }
     }
 }
