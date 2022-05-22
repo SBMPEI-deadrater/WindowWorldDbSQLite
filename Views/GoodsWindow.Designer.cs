@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -50,17 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imgSrcCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numGoodsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameGoodsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addBtn = new System.Windows.Forms.Button();
@@ -75,12 +67,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.numAddBox = new System.Windows.Forms.TextBox();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameGoodsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgSrcCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saveCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.searchGrBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageAddBox)).BeginInit();
@@ -95,7 +97,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1504, 913);
+            this.tabControl1.Size = new System.Drawing.Size(1595, 913);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -103,12 +105,12 @@
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.searchGrBox);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridView);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1496, 880);
+            this.tabPage1.Size = new System.Drawing.Size(1587, 880);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -131,7 +133,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.numBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(1010, 4);
+            this.groupBox1.Location = new System.Drawing.Point(1101, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -255,7 +257,6 @@
             this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Код изделия";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // numBox
             // 
@@ -316,106 +317,29 @@
             this.textBox1.Size = new System.Drawing.Size(370, 27);
             this.textBox1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
-            this.imgSrcCol,
-            this.numGoodsCol,
             this.nameGoodsCol,
             this.companyCol,
             this.typeCol,
             this.priceCol,
+            this.imgSrcCol,
             this.activeCol,
             this.progressCol,
+            this.saveCol,
             this.deleteCol});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 25);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(997, 727);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "ID";
-            this.idCol.MinimumWidth = 6;
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            this.idCol.Width = 125;
-            // 
-            // imgSrcCol
-            // 
-            this.imgSrcCol.HeaderText = "Путь к изображению";
-            this.imgSrcCol.MinimumWidth = 6;
-            this.imgSrcCol.Name = "imgSrcCol";
-            this.imgSrcCol.ReadOnly = true;
-            this.imgSrcCol.Visible = false;
-            this.imgSrcCol.Width = 125;
-            // 
-            // numGoodsCol
-            // 
-            this.numGoodsCol.HeaderText = "Код";
-            this.numGoodsCol.MinimumWidth = 6;
-            this.numGoodsCol.Name = "numGoodsCol";
-            this.numGoodsCol.Width = 50;
-            // 
-            // nameGoodsCol
-            // 
-            this.nameGoodsCol.HeaderText = "Наименование";
-            this.nameGoodsCol.MinimumWidth = 6;
-            this.nameGoodsCol.Name = "nameGoodsCol";
-            this.nameGoodsCol.Width = 200;
-            // 
-            // companyCol
-            // 
-            this.companyCol.HeaderText = "Производитель";
-            this.companyCol.MinimumWidth = 6;
-            this.companyCol.Name = "companyCol";
-            this.companyCol.ReadOnly = true;
-            this.companyCol.Width = 125;
-            // 
-            // typeCol
-            // 
-            this.typeCol.HeaderText = "Вид изделия";
-            this.typeCol.MinimumWidth = 6;
-            this.typeCol.Name = "typeCol";
-            this.typeCol.ReadOnly = true;
-            this.typeCol.Width = 150;
-            // 
-            // priceCol
-            // 
-            this.priceCol.HeaderText = "Цена, руб.";
-            this.priceCol.MinimumWidth = 6;
-            this.priceCol.Name = "priceCol";
-            this.priceCol.Width = 125;
-            // 
-            // activeCol
-            // 
-            this.activeCol.HeaderText = "Доступно";
-            this.activeCol.MinimumWidth = 6;
-            this.activeCol.Name = "activeCol";
-            this.activeCol.Width = 90;
-            // 
-            // progressCol
-            // 
-            this.progressCol.HeaderText = "В работе";
-            this.progressCol.MinimumWidth = 6;
-            this.progressCol.Name = "progressCol";
-            this.progressCol.Width = 90;
-            // 
-            // deleteCol
-            // 
-            this.deleteCol.HeaderText = "Удалить";
-            this.deleteCol.MinimumWidth = 6;
-            this.deleteCol.Name = "deleteCol";
-            this.deleteCol.Width = 90;
+            this.dataGridView.Location = new System.Drawing.Point(7, 25);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 25;
+            this.dataGridView.Size = new System.Drawing.Size(1088, 727);
+            this.dataGridView.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -424,7 +348,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1496, 880);
+            this.tabPage2.Size = new System.Drawing.Size(1587, 880);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -449,7 +373,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1490, 872);
+            this.groupBox2.Size = new System.Drawing.Size(1581, 872);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
@@ -557,11 +481,99 @@
             this.numAddBox.Size = new System.Drawing.Size(114, 27);
             this.numAddBox.TabIndex = 0;
             // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "Код";
+            this.idCol.MinimumWidth = 6;
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            this.idCol.Width = 125;
+            // 
+            // nameGoodsCol
+            // 
+            this.nameGoodsCol.HeaderText = "Наименование";
+            this.nameGoodsCol.MinimumWidth = 6;
+            this.nameGoodsCol.Name = "nameGoodsCol";
+            this.nameGoodsCol.Width = 200;
+            // 
+            // companyCol
+            // 
+            this.companyCol.HeaderText = "Производитель";
+            this.companyCol.MinimumWidth = 6;
+            this.companyCol.Name = "companyCol";
+            this.companyCol.ReadOnly = true;
+            this.companyCol.Width = 125;
+            // 
+            // typeCol
+            // 
+            this.typeCol.HeaderText = "Вид изделия";
+            this.typeCol.MinimumWidth = 6;
+            this.typeCol.Name = "typeCol";
+            this.typeCol.ReadOnly = true;
+            this.typeCol.Width = 150;
+            // 
+            // priceCol
+            // 
+            this.priceCol.HeaderText = "Цена, руб.";
+            this.priceCol.MinimumWidth = 6;
+            this.priceCol.Name = "priceCol";
+            this.priceCol.Width = 125;
+            // 
+            // imgSrcCol
+            // 
+            this.imgSrcCol.HeaderText = "Путь к изображению";
+            this.imgSrcCol.MinimumWidth = 6;
+            this.imgSrcCol.Name = "imgSrcCol";
+            this.imgSrcCol.ReadOnly = true;
+            this.imgSrcCol.Visible = false;
+            this.imgSrcCol.Width = 125;
+            // 
+            // activeCol
+            // 
+            this.activeCol.HeaderText = "Доступно";
+            this.activeCol.MinimumWidth = 6;
+            this.activeCol.Name = "activeCol";
+            this.activeCol.Width = 90;
+            // 
+            // progressCol
+            // 
+            this.progressCol.HeaderText = "В работе";
+            this.progressCol.MinimumWidth = 6;
+            this.progressCol.Name = "progressCol";
+            this.progressCol.Width = 90;
+            // 
+            // saveCol
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.saveCol.DefaultCellStyle = dataGridViewCellStyle1;
+            this.saveCol.HeaderText = "Сохранить";
+            this.saveCol.MinimumWidth = 6;
+            this.saveCol.Name = "saveCol";
+            this.saveCol.Width = 125;
+            // 
+            // deleteCol
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
+            this.deleteCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.deleteCol.HeaderText = "Удалить";
+            this.deleteCol.MinimumWidth = 6;
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.Width = 90;
+            // 
             // GoodsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1504, 913);
+            this.ClientSize = new System.Drawing.Size(1595, 913);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -569,6 +581,7 @@
             this.Name = "GoodsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изделия";
+            this.Load += new System.EventHandler(this.GoodsWindow_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -576,7 +589,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.searchGrBox.ResumeLayout(false);
             this.searchGrBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -589,7 +602,7 @@
 
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView;
         private TabPage tabPage2;
         private GroupBox groupBox1;
         private TextBox priceBox;
@@ -625,14 +638,14 @@
         private Label label10;
         private TextBox numAddBox;
         private DataGridViewTextBoxColumn idCol;
-        private DataGridViewTextBoxColumn imgSrcCol;
-        private DataGridViewTextBoxColumn numGoodsCol;
         private DataGridViewTextBoxColumn nameGoodsCol;
         private DataGridViewTextBoxColumn companyCol;
         private DataGridViewTextBoxColumn typeCol;
         private DataGridViewTextBoxColumn priceCol;
+        private DataGridViewTextBoxColumn imgSrcCol;
         private DataGridViewCheckBoxColumn activeCol;
         private DataGridViewCheckBoxColumn progressCol;
+        private DataGridViewButtonColumn saveCol;
         private DataGridViewButtonColumn deleteCol;
     }
 }
