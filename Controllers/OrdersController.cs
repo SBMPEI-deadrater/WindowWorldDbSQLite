@@ -12,14 +12,14 @@ namespace WindowWorldDbSQLite.Controllers
     public class OrdersController
     {
         private SettingsDatabase settingsDatabase = new SettingsDatabase();
-        public List<Orders> GetAllOrders(string search = "", string field = "")
+        public List<Orders> GetAllOrders()
         {
             List<Orders> orders = null;
             try
             {
                 using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
-                    orders = db.Orders.OrderBy(o => o.OrderPrice).ToList();
+                    orders = db.Orders.OrderBy(o => o.DateOrder).ToList();
                 }
             }
             catch
