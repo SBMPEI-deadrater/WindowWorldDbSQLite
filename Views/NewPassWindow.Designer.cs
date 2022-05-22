@@ -34,16 +34,18 @@
             // 
             // newpassBox
             // 
-            this.newpassBox.Location = new System.Drawing.Point(12, 12);
+            this.newpassBox.Location = new System.Drawing.Point(14, 16);
+            this.newpassBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.newpassBox.Name = "newpassBox";
-            this.newpassBox.Size = new System.Drawing.Size(248, 23);
+            this.newpassBox.Size = new System.Drawing.Size(283, 27);
             this.newpassBox.TabIndex = 0;
             // 
             // newpassBtn
             // 
-            this.newpassBtn.Location = new System.Drawing.Point(12, 41);
+            this.newpassBtn.Location = new System.Drawing.Point(14, 55);
+            this.newpassBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.newpassBtn.Name = "newpassBtn";
-            this.newpassBtn.Size = new System.Drawing.Size(248, 23);
+            this.newpassBtn.Size = new System.Drawing.Size(283, 31);
             this.newpassBtn.TabIndex = 1;
             this.newpassBtn.Text = "ИЗМЕНИТЬ";
             this.newpassBtn.UseVisualStyleBackColor = true;
@@ -51,13 +53,17 @@
             // 
             // NewPassWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 77);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(311, 103);
             this.Controls.Add(this.newpassBtn);
             this.Controls.Add(this.newpassBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewPassWindow";
-            this.Text = "Введите новый пароль";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Смена пароля";
             this.ResumeLayout(false);
             this.PerformLayout();
 

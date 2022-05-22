@@ -25,12 +25,13 @@ namespace WindowWorldDbSQLite.Views
             mUser = _user;
             aForm = _form;
             InitializeComponent();
+            this.Text = $"{this.Text} — {mUser.UserName}({mUser.Role})";
         }
 
         private void сменаПарольToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewPassWindow newPass = new NewPassWindow();
-            newPass.Show();
+            /*NewPassWindow newPass = new NewPassWindow(mUser);
+            newPass.Show();*/
         }
 
         private void изделияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace WindowWorldDbSQLite.Views
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            aForm.Show();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,6 +60,12 @@ namespace WindowWorldDbSQLite.Views
         {
             CustomersWindow customersWindow = new CustomersWindow();
             customersWindow.Show();
+        }
+
+        private void сменаПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            aForm.Show();
         }
     }
 }

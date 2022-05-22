@@ -27,15 +27,15 @@ namespace WindowWorldDbSQLite.Views
         {
             try
             {
-                //bool result = newPass.ChangePasswordAdmin(newpassBox.Text);
-                /*if (result)
+                bool result = newPass.ChangePassword(newpassBox.Text);
+                if (result)
                 {
                     MessageBox.Show("Пароль успешно изменён!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show("Произошла ошибка! Пароль не был изменён!", "Ошибка!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }*/
+                }
             }
             catch(Exception ex)
             {

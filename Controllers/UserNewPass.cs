@@ -12,9 +12,10 @@ namespace WindowWorldDbSQLite.Controllers
 {
     public class UserNewPass
     {
+
         /*public bool ChangePassword(string newPass)
         {
-            *//*bool result = profileCtrl.ChangePassword(ref mUser, passBox.Text);
+            bool result = profileCtrl.ChangePassword(ref mUser, passBox.Text);
             if (result)
             {
                 ReloadData(mUser);
@@ -23,7 +24,7 @@ namespace WindowWorldDbSQLite.Controllers
             else
             {
                 MessageBox.Show("Произошла ошибка! Пароль не был изменён!", "Ошибка!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*//*
+            }
         }*/
 
     }

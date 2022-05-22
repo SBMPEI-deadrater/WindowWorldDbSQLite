@@ -44,6 +44,7 @@
             this.резервноеКопированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сменаПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,21 +93,21 @@
             // изделияToolStripMenuItem
             // 
             this.изделияToolStripMenuItem.Name = "изделияToolStripMenuItem";
-            this.изделияToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.изделияToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.изделияToolStripMenuItem.Text = "Изделия";
             this.изделияToolStripMenuItem.Click += new System.EventHandler(this.изделияToolStripMenuItem_Click);
             // 
             // услугиToolStripMenuItem
             // 
             this.услугиToolStripMenuItem.Name = "услугиToolStripMenuItem";
-            this.услугиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.услугиToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.услугиToolStripMenuItem.Text = "Услуги";
             this.услугиToolStripMenuItem.Click += new System.EventHandler(this.услугиToolStripMenuItem_Click);
             // 
             // заказчикиToolStripMenuItem
             // 
             this.заказчикиToolStripMenuItem.Name = "заказчикиToolStripMenuItem";
-            this.заказчикиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.заказчикиToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.заказчикиToolStripMenuItem.Text = "Заказчики";
             this.заказчикиToolStripMenuItem.Click += new System.EventHandler(this.заказчикиToolStripMenuItem_Click);
             // 
@@ -116,7 +117,7 @@
             this.поИзделиямToolStripMenuItem,
             this.поУслугамToolStripMenuItem});
             this.заказыToolStripMenuItem.Name = "заказыToolStripMenuItem";
-            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.заказыToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.заказыToolStripMenuItem.Text = "Заказы";
             // 
             // поИзделиямToolStripMenuItem
@@ -141,7 +142,8 @@
             // 
             this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сменаПарольToolStripMenuItem,
-            this.резервноеКопированиеToolStripMenuItem});
+            this.резервноеКопированиеToolStripMenuItem,
+            this.сменаПользователяToolStripMenuItem});
             this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
             this.сервисToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.сервисToolStripMenuItem.Text = "Сервис";
@@ -172,6 +174,13 @@
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            // 
+            // сменаПользователяToolStripMenuItem
+            // 
+            this.сменаПользователяToolStripMenuItem.Name = "сменаПользователяToolStripMenuItem";
+            this.сменаПользователяToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.сменаПользователяToolStripMenuItem.Text = "Смена пользователя";
+            this.сменаПользователяToolStripMenuItem.Click += new System.EventHandler(this.сменаПользователяToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -212,5 +221,6 @@
         private ToolStripMenuItem поИзделиямToolStripMenuItem;
         private ToolStripMenuItem поУслугамToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private ToolStripMenuItem сменаПользователяToolStripMenuItem;
     }
 }

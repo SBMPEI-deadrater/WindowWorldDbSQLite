@@ -21,6 +21,10 @@ namespace WindowWorldDbSQLite.Views
         {
             authCTRL = new AuthCTRL();
             InitializeComponent();
+
+           /* object s = new object();
+            EventArgs e = new EventArgs();
+            loginBtn_Click(s, e);*/
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -36,6 +40,7 @@ namespace WindowWorldDbSQLite.Views
                         this.Hide();
                         MainWindow mainWindow = new MainWindow(myUser, this);
                         mainWindow.Show();
+                        this.Hide();
                     }
                     else
                     {
