@@ -37,12 +37,13 @@ namespace WindowWorldDbSQLite.Views
                 for(int i = 0; i < psItems.Count; i++)
                 {
                     dataGridCustomers.Rows.Add();
-                    dataGridCustomers[0, i].Value = psItems[i].Id;
-                    dataGridCustomers[1, i].Value = psItems[i].LastName;
+                    //dataGridCustomers[0, i].Value = psItems[i].Id;
+                    dataGridCustomers[0, i].Value = psItems[i].LastName;
+                    dataGridCustomers[1, i].Value = psItems[i].FirstName;
                     dataGridCustomers[2, i].Value = psItems[i].MiddleName;
-                    dataGridCustomers[3, i].Value = psItems[i].FirstName;
-                    dataGridCustomers[4, i].Value = psItems[i].Adress;
-                    dataGridCustomers[5, i].Value = psItems[i].PhoneNumber;
+                    dataGridCustomers[3, i].Value = psItems[i].Adress;
+                    dataGridCustomers[4, i].Value = psItems[i].PhoneNumber;
+                    dataGridCustomers[5, i].Value = "Удалить";
                 }
             }
         }

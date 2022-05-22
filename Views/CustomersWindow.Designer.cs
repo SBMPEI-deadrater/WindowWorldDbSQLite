@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -35,12 +36,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridCustomers = new System.Windows.Forms.DataGridView();
-            this.lastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -55,6 +50,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.searchGrBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
@@ -148,48 +149,6 @@
             this.dataGridCustomers.RowTemplate.Height = 25;
             this.dataGridCustomers.Size = new System.Drawing.Size(904, 697);
             this.dataGridCustomers.TabIndex = 0;
-            // 
-            // lastNameCol
-            // 
-            this.lastNameCol.HeaderText = "Фамилия";
-            this.lastNameCol.MinimumWidth = 6;
-            this.lastNameCol.Name = "lastNameCol";
-            this.lastNameCol.Width = 125;
-            // 
-            // firstNameCol
-            // 
-            this.firstNameCol.HeaderText = "Имя";
-            this.firstNameCol.MinimumWidth = 6;
-            this.firstNameCol.Name = "firstNameCol";
-            this.firstNameCol.Width = 125;
-            // 
-            // middleNameCol
-            // 
-            this.middleNameCol.HeaderText = "Отчество";
-            this.middleNameCol.MinimumWidth = 6;
-            this.middleNameCol.Name = "middleNameCol";
-            this.middleNameCol.Width = 125;
-            // 
-            // adressCol
-            // 
-            this.adressCol.HeaderText = "Адрес";
-            this.adressCol.MinimumWidth = 6;
-            this.adressCol.Name = "adressCol";
-            this.adressCol.Width = 125;
-            // 
-            // phoneNumberCol
-            // 
-            this.phoneNumberCol.HeaderText = "Номер телефона";
-            this.phoneNumberCol.MinimumWidth = 6;
-            this.phoneNumberCol.Name = "phoneNumberCol";
-            this.phoneNumberCol.Width = 200;
-            // 
-            // deleteCol
-            // 
-            this.deleteCol.HeaderText = "Удалить";
-            this.deleteCol.MinimumWidth = 6;
-            this.deleteCol.Name = "deleteCol";
-            this.deleteCol.Width = 125;
             // 
             // tabControl1
             // 
@@ -333,6 +292,54 @@
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Фамилия";
+            // 
+            // lastNameCol
+            // 
+            this.lastNameCol.HeaderText = "Фамилия";
+            this.lastNameCol.MinimumWidth = 6;
+            this.lastNameCol.Name = "lastNameCol";
+            this.lastNameCol.Width = 125;
+            // 
+            // firstNameCol
+            // 
+            this.firstNameCol.HeaderText = "Имя";
+            this.firstNameCol.MinimumWidth = 6;
+            this.firstNameCol.Name = "firstNameCol";
+            this.firstNameCol.Width = 125;
+            // 
+            // middleNameCol
+            // 
+            this.middleNameCol.HeaderText = "Отчество";
+            this.middleNameCol.MinimumWidth = 6;
+            this.middleNameCol.Name = "middleNameCol";
+            this.middleNameCol.Width = 125;
+            // 
+            // adressCol
+            // 
+            this.adressCol.HeaderText = "Адрес";
+            this.adressCol.MinimumWidth = 6;
+            this.adressCol.Name = "adressCol";
+            this.adressCol.Width = 125;
+            // 
+            // phoneNumberCol
+            // 
+            this.phoneNumberCol.HeaderText = "Номер телефона";
+            this.phoneNumberCol.MinimumWidth = 6;
+            this.phoneNumberCol.Name = "phoneNumberCol";
+            this.phoneNumberCol.Width = 200;
+            // 
+            // deleteCol
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteCol.DefaultCellStyle = dataGridViewCellStyle1;
+            this.deleteCol.HeaderText = "Удалить";
+            this.deleteCol.MinimumWidth = 6;
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.Width = 125;
             // 
             // CustomersWindow
             // 
