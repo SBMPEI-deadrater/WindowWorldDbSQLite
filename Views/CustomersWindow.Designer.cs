@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.searchGrBox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboSearchBox = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridCustomers = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -81,39 +85,46 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Выбрать поле:";
             // 
-            // textBox1
+            // searchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 68);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(370, 27);
-            this.textBox1.TabIndex = 0;
+            this.searchBox.Location = new System.Drawing.Point(113, 68);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(370, 27);
+            this.searchBox.TabIndex = 0;
+            this.searchBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.searchBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyUp);
             // 
             // searchGrBox
             // 
             this.searchGrBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.searchGrBox.Controls.Add(this.label2);
             this.searchGrBox.Controls.Add(this.label1);
-            this.searchGrBox.Controls.Add(this.comboBox1);
-            this.searchGrBox.Controls.Add(this.textBox1);
+            this.searchGrBox.Controls.Add(this.comboSearchBox);
+            this.searchGrBox.Controls.Add(this.searchBox);
             this.searchGrBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.searchGrBox.Location = new System.Drawing.Point(3, 589);
             this.searchGrBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchGrBox.Name = "searchGrBox";
             this.searchGrBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchGrBox.Size = new System.Drawing.Size(904, 112);
+            this.searchGrBox.Size = new System.Drawing.Size(1048, 112);
             this.searchGrBox.TabIndex = 1;
             this.searchGrBox.TabStop = false;
             this.searchGrBox.Text = "Поиск";
             // 
-            // comboBox1
+            // comboSearchBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 29);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(370, 28);
-            this.comboBox1.TabIndex = 1;
+            this.comboSearchBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSearchBox.FormattingEnabled = true;
+            this.comboSearchBox.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Поиск по адресу",
+            "Поиск по телефону"});
+            this.comboSearchBox.Location = new System.Drawing.Point(113, 29);
+            this.comboSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboSearchBox.Name = "comboSearchBox";
+            this.comboSearchBox.Size = new System.Drawing.Size(370, 28);
+            this.comboSearchBox.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -123,7 +134,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(910, 705);
+            this.tabPage1.Size = new System.Drawing.Size(1054, 705);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -134,11 +145,13 @@
             this.dataGridCustomers.AllowUserToDeleteRows = false;
             this.dataGridCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCol,
             this.lastNameCol,
             this.firstNameCol,
             this.middleNameCol,
             this.adressCol,
             this.phoneNumberCol,
+            this.saveCol,
             this.deleteCol});
             this.dataGridCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridCustomers.Location = new System.Drawing.Point(3, 4);
@@ -146,8 +159,17 @@
             this.dataGridCustomers.Name = "dataGridCustomers";
             this.dataGridCustomers.RowHeadersWidth = 51;
             this.dataGridCustomers.RowTemplate.Height = 25;
-            this.dataGridCustomers.Size = new System.Drawing.Size(904, 697);
+            this.dataGridCustomers.Size = new System.Drawing.Size(1048, 697);
             this.dataGridCustomers.TabIndex = 0;
+            this.dataGridCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomers_CellContentClick);
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "ID";
+            this.idCol.MinimumWidth = 6;
+            this.idCol.Name = "idCol";
+            this.idCol.Visible = false;
+            this.idCol.Width = 125;
             // 
             // lastNameCol
             // 
@@ -184,8 +206,27 @@
             this.phoneNumberCol.Name = "phoneNumberCol";
             this.phoneNumberCol.Width = 200;
             // 
+            // saveCol
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.saveCol.DefaultCellStyle = dataGridViewCellStyle1;
+            this.saveCol.HeaderText = "Сохранить";
+            this.saveCol.MinimumWidth = 6;
+            this.saveCol.Name = "saveCol";
+            this.saveCol.Width = 125;
+            // 
             // deleteCol
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteCol.DefaultCellStyle = dataGridViewCellStyle2;
             this.deleteCol.HeaderText = "Удалить";
             this.deleteCol.MinimumWidth = 6;
             this.deleteCol.Name = "deleteCol";
@@ -200,7 +241,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(918, 738);
+            this.tabControl1.Size = new System.Drawing.Size(1062, 738);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
@@ -211,7 +252,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(910, 705);
+            this.tabPage2.Size = new System.Drawing.Size(1054, 705);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Добавить";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -235,13 +276,13 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(904, 697);
+            this.groupBox2.Size = new System.Drawing.Size(1048, 697);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
             // phoneNumberAddBox
             // 
-            this.phoneNumberAddBox.Location = new System.Drawing.Point(197, 461);
+            this.phoneNumberAddBox.Location = new System.Drawing.Point(280, 445);
             this.phoneNumberAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.phoneNumberAddBox.Name = "phoneNumberAddBox";
             this.phoneNumberAddBox.Size = new System.Drawing.Size(477, 27);
@@ -250,7 +291,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(197, 439);
+            this.label3.Location = new System.Drawing.Point(280, 423);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 20);
             this.label3.TabIndex = 14;
@@ -258,17 +299,18 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(197, 496);
+            this.addBtn.Location = new System.Drawing.Point(280, 480);
             this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(478, 52);
             this.addBtn.TabIndex = 13;
             this.addBtn.Text = "Добавить запись";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // adressAddBox
             // 
-            this.adressAddBox.Location = new System.Drawing.Point(197, 392);
+            this.adressAddBox.Location = new System.Drawing.Point(280, 376);
             this.adressAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.adressAddBox.Name = "adressAddBox";
             this.adressAddBox.Size = new System.Drawing.Size(477, 27);
@@ -276,7 +318,7 @@
             // 
             // middleNameAddBox
             // 
-            this.middleNameAddBox.Location = new System.Drawing.Point(197, 320);
+            this.middleNameAddBox.Location = new System.Drawing.Point(280, 304);
             this.middleNameAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.middleNameAddBox.Name = "middleNameAddBox";
             this.middleNameAddBox.Size = new System.Drawing.Size(477, 27);
@@ -284,7 +326,7 @@
             // 
             // firstnameAddBox
             // 
-            this.firstnameAddBox.Location = new System.Drawing.Point(197, 249);
+            this.firstnameAddBox.Location = new System.Drawing.Point(280, 233);
             this.firstnameAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.firstnameAddBox.Name = "firstnameAddBox";
             this.firstnameAddBox.Size = new System.Drawing.Size(477, 27);
@@ -292,7 +334,7 @@
             // 
             // lastNameAddBox
             // 
-            this.lastNameAddBox.Location = new System.Drawing.Point(197, 175);
+            this.lastNameAddBox.Location = new System.Drawing.Point(280, 159);
             this.lastNameAddBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lastNameAddBox.Name = "lastNameAddBox";
             this.lastNameAddBox.Size = new System.Drawing.Size(477, 27);
@@ -301,7 +343,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(197, 370);
+            this.label11.Location = new System.Drawing.Point(280, 354);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 20);
             this.label11.TabIndex = 5;
@@ -310,7 +352,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(197, 298);
+            this.label12.Location = new System.Drawing.Point(280, 282);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 20);
             this.label12.TabIndex = 4;
@@ -319,7 +361,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(197, 227);
+            this.label8.Location = new System.Drawing.Point(280, 211);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 20);
             this.label8.TabIndex = 3;
@@ -328,7 +370,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(197, 153);
+            this.label9.Location = new System.Drawing.Point(280, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 2;
@@ -338,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 738);
+            this.ClientSize = new System.Drawing.Size(1062, 738);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CustomersWindow";
@@ -361,9 +403,9 @@
 
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox searchBox;
         private GroupBox searchGrBox;
-        private ComboBox comboBox1;
+        private ComboBox comboSearchBox;
         private TabPage tabPage1;
         private DataGridView dataGridCustomers;
         private TabControl tabControl1;
@@ -380,11 +422,13 @@
         private Label label9;
         private TextBox phoneNumberAddBox;
         private Label label3;
+        private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn lastNameCol;
         private DataGridViewTextBoxColumn firstNameCol;
         private DataGridViewTextBoxColumn middleNameCol;
         private DataGridViewTextBoxColumn adressCol;
         private DataGridViewTextBoxColumn phoneNumberCol;
+        private DataGridViewButtonColumn saveCol;
         private DataGridViewButtonColumn deleteCol;
     }
 }
