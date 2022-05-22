@@ -36,5 +36,29 @@ namespace WindowWorldDbSQLite.Controllers
 
             return user;
         }
+
+        public bool UpdateUserPassword(User obj, string _newPass)
+        {
+            bool result = false;
+            try
+            {
+                using (_ContextDb db = new _ContextDb())
+                {
+                    if(db.Users.Any(u => u.Id == obj.Id))
+                    {
+                        obj.Password = _newPass;
+                        db.Users.Update(obj);
+                        db.SaveChanges();
+                        result = true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return result;
+        }
     }
 }

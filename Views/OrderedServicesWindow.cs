@@ -15,7 +15,6 @@ namespace WindowWorldDbSQLite.Views
         public OrderedServicesWindow()
         {
             InitializeComponent();
-            orderDateBox.Text = DateTime.Now.ToString();
         }
     }
 }
