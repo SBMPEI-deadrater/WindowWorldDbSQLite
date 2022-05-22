@@ -7,7 +7,7 @@ using WindowWorldDbSQLite.Database.Models;
 
 namespace WindowWorldDbSQLite.Services.Interfaces
 {
-    internal interface IFaceWordService: IDisposable
+    internal interface IWordService: IDisposable
     {
         bool CreateDocOrders(Dictionary<Type, List<Orders>> _dict, string _nameOrders = "");
     }
