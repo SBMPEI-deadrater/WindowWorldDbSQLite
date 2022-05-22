@@ -15,15 +15,16 @@ namespace WindowWorldDbSQLite.Controllers
     /// </summary>
     public class AuthCTRL
     {
+        private SettingsDatabase settingsDatabase = new SettingsDatabase();
+
         public User AuthToApp(string _username, string _password)
         {
             User user = null;
-            //EncryptionText et = new EncryptionText(); // SHA256
 
             try
             {
                 //Проверка связки логин-пароль
-                using (_ContextDb db = new _ContextDb())
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     var res = db.Users.FirstOrDefault(x => x.UserName == _username && x.Password == _password);
                     if (res != null) user = res;
@@ -42,7 +43,7 @@ namespace WindowWorldDbSQLite.Controllers
             bool result = false;
             try
             {
-                using (_ContextDb db = new _ContextDb())
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(db.Users.Any(u => u.Id == obj.Id))
                     {

@@ -1,5 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using WindowWorldDbSQLite.Database;
 using WindowWorldDbSQLite.Views;
+using WindowWorldDbSQLite.Services;
 
 namespace WindowWorldDbSQLite
 {
@@ -11,7 +14,9 @@ namespace WindowWorldDbSQLite
         [STAThread]
         static void Main()
         {
-            using (_ContextDb db = new _ContextDb())
+            SettingsDatabase settingsDb = new SettingsDatabase();
+         
+            using (_ContextDb db = new _ContextDb(settingsDb.GetDbContextOptions()))
             {
                 DBInit dBIni = new DBInit(db);
                 dBIni.DefaultGeneration();

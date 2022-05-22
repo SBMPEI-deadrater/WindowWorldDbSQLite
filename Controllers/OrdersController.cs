@@ -5,17 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowWorldDbSQLite.Database;
 using WindowWorldDbSQLite.Database.Models;
+using WindowWorldDbSQLite.Services;
 
 namespace WindowWorldDbSQLite.Controllers
 {
     public class OrdersController
     {
+        private SettingsDatabase settingsDatabase = new SettingsDatabase();
         public List<Orders> GetAllOrders(string search = "", string field = "")
         {
             List<Orders> orders = null;
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     orders = db.Orders.OrderBy(o => o.OrderPrice).ToList();
                 }
@@ -34,7 +36,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     order = db.Orders.FirstOrDefault(o => o.Id == _id);
                 }
@@ -53,7 +55,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     db.Orders.Add(obj);
                     db.SaveChanges();
@@ -74,7 +76,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(db.Orders.Any(o => o.Id == obj.Id))
                     {

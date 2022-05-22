@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using WindowWorldDbSQLite.Database.Models;
 
 namespace WindowWorldDbSQLite.Database
@@ -17,16 +18,10 @@ namespace WindowWorldDbSQLite.Database
         public DbSet<Orders> Orders { get; set; }
         public DbSet<Service> Services { get; set; }
 
-        public _ContextDb()
+        public _ContextDb(DbContextOptions<_ContextDb> options) : base(options)
         {
             //Проверка существования БД
             Database.EnsureCreated();
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //SQLite
-            optionsBuilder.UseSqlite("Data Source=sqlite_window_world.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
