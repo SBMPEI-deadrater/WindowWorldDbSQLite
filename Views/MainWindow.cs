@@ -120,5 +120,28 @@ namespace WindowWorldDbSQLite.Views
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*OrdersController ordersController = new OrdersController();
+
+            StringBuilder sb = new StringBuilder();
+
+            var dict = ordersController.GetListOrdersMaxProfit();
+            var maxDict = new Dictionary<string, decimal>();
+            for(int i = 0; i < dict.Count; i++)
+            {
+                Dictionary<string, decimal> item = dict.OrderByDescending(d => d.Value).ToString();
+                MessageBox.Show(item.Values.ToString());*/
+                //sb.Append(item. + " -- " + item.Value + "\n");
+
+            }
+            /*foreach (var item in dict)
+            {
+                dict.Max(d => d.Value);
+
+            }
+            MessageBox.Show(.ToString());*/
+        }
     }
 }

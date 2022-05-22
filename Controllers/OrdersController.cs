@@ -165,5 +165,47 @@ namespace WindowWorldDbSQLite.Controllers
 
             return result;
         }
+        
+        public Dictionary<string, decimal> GetListOrdersMaxProfit()
+        {
+            var result = new Dictionary<string, decimal>();
+
+            try
+            {
+                GoodController goodController = new GoodController();
+                var goods = goodController.GetAllGoodByFilter();
+
+                var listOrders = new List<Orders>();
+
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    listOrders = db.Orders.ToList();
+                }
+
+                if(listOrders != null && listOrders.Count > 0)
+                {
+                    foreach (var good in goods)
+                    {
+                        decimal sum = 0M;
+                        foreach(var order in listOrders)
+                        {
+                            if(good.Id == order.GoodId)
+                            {
+                                sum += order.OrderPrice;
+                            }
+                        }
+                        result.Add(good.Name, sum);
+                    }
+
+                    result.OrderBy(r => r.Value);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+
+            return result;
+        }
     }
 }
