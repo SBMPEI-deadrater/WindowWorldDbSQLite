@@ -11,8 +11,8 @@ namespace WindowWorldDbSQLite.Services.Interfaces
 {
     internal interface ISettingsDatabase: IDisposable
     {
-        bool BackupSQLiteDbToDesktop(string _path);
+        bool BackupSQLiteDbToDesktop();
         DbContextOptions<_ContextDb> GetDbContextOptions();
-        //string GetDbConnectionString();
+        string GetDbPathTofile();
     }
 }
