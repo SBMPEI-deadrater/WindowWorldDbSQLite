@@ -11,6 +11,7 @@ using WindowWorldDbSQLite.Database.Models;
 
 namespace WindowWorldDbSQLite.Database.Models
 {
+    [Table("ordered_service")]
     public class OrderedService : BaseEntity
     {
         [Column("service_id", Order = 1)]
@@ -37,6 +38,19 @@ namespace WindowWorldDbSQLite.Database.Models
         public bool IsPayed { get; set; }
 
         [Column("progress", Order = 8)]
+        public bool Progress { get; set; }
+    }
+
+    [NotMapped]
+    public class OrderedServiceForMaxProfit
+    {
+        public Service ServiceItem { get; set; }
+        public DateTime OrderedDate { get; set; }
+        public Customer CustomerItem { get; set; }
+        public DateTime ProvisionalReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public decimal Price { get; set; }
+        public bool IsPayed { get; set; }
         public bool Progress { get; set; }
     }
 }

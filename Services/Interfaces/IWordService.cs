@@ -9,6 +9,8 @@ namespace WindowWorldDbSQLite.Services.Interfaces
 {
     internal interface IWordService: IDisposable
     {
-        bool CreateDocOrders(Dictionary<Type, List<Orders>> _dict, string _nameOrders = "");
+        bool CreateDocOrders(List<OrdersForDocx> _list);
+
+        bool CreateDocMaxProfit(List<OrderedServiceForMaxProfit> _list);
     }
 }

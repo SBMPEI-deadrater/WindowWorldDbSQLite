@@ -99,6 +99,7 @@
             this.exportBtn.TabIndex = 6;
             this.exportBtn.Text = "Экспорт";
             this.exportBtn.UseVisualStyleBackColor = true;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
             // ReportWindow
             // 

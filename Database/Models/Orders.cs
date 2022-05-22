@@ -39,4 +39,17 @@ namespace WindowWorldDbSQLite.Database.Models
         [Column("order_progress", Order = 8)]
         public bool OrderProgress { get; set; }
     }
+
+    [NotMapped]
+    public class OrdersForDocx
+    {
+        public Good GoodItem { get; set; }
+        public DateTime DateOrder { get; set; }
+        public Customer CustomerItem { get; set; }
+        public DateTime ProvisionalReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public decimal OrderPrice { get; set; }
+        public bool IsPayed { get; set; }
+        public bool OrderProgress { get; set; }
+    }
 }
