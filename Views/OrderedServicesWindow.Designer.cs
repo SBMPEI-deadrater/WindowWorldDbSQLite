@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,6 +44,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.numAddBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchGrBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderedDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +61,6 @@
             this.isPayedCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.searchGrBox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -201,6 +204,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCol,
             this.serviceIdCol,
             this.orderedDateCol,
             this.customerIdCol,
@@ -218,71 +222,6 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1075, 880);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // serviceIdCol
-            // 
-            this.serviceIdCol.HeaderText = "Service Id";
-            this.serviceIdCol.MinimumWidth = 6;
-            this.serviceIdCol.Name = "serviceIdCol";
-            this.serviceIdCol.ReadOnly = true;
-            this.serviceIdCol.Visible = false;
-            this.serviceIdCol.Width = 125;
-            // 
-            // orderedDateCol
-            // 
-            this.orderedDateCol.HeaderText = "Дата заказа";
-            this.orderedDateCol.MinimumWidth = 6;
-            this.orderedDateCol.Name = "orderedDateCol";
-            this.orderedDateCol.Width = 125;
-            // 
-            // customerIdCol
-            // 
-            this.customerIdCol.HeaderText = "Заказчик";
-            this.customerIdCol.MinimumWidth = 6;
-            this.customerIdCol.Name = "customerIdCol";
-            this.customerIdCol.Width = 125;
-            // 
-            // provisionReleaseDateCol
-            // 
-            this.provisionReleaseDateCol.HeaderText = "Предпол. дата выполнения";
-            this.provisionReleaseDateCol.MinimumWidth = 6;
-            this.provisionReleaseDateCol.Name = "provisionReleaseDateCol";
-            this.provisionReleaseDateCol.Width = 125;
-            // 
-            // releaseDateCol
-            // 
-            this.releaseDateCol.HeaderText = "Дата выполнения";
-            this.releaseDateCol.MinimumWidth = 6;
-            this.releaseDateCol.Name = "releaseDateCol";
-            this.releaseDateCol.Width = 125;
-            // 
-            // priceCol
-            // 
-            this.priceCol.HeaderText = "Цена, руб.";
-            this.priceCol.MinimumWidth = 6;
-            this.priceCol.Name = "priceCol";
-            this.priceCol.Width = 125;
-            // 
-            // isPayedCol
-            // 
-            this.isPayedCol.HeaderText = "Оплчачено";
-            this.isPayedCol.MinimumWidth = 6;
-            this.isPayedCol.Name = "isPayedCol";
-            this.isPayedCol.Width = 125;
-            // 
-            // progressCol
-            // 
-            this.progressCol.HeaderText = "В работе";
-            this.progressCol.MinimumWidth = 6;
-            this.progressCol.Name = "progressCol";
-            this.progressCol.Width = 125;
-            // 
-            // deleteCol
-            // 
-            this.deleteCol.HeaderText = "Удалить";
-            this.deleteCol.MinimumWidth = 6;
-            this.deleteCol.Name = "deleteCol";
-            this.deleteCol.Width = 125;
             // 
             // tabControl1
             // 
@@ -362,6 +301,85 @@
             this.textBox1.Size = new System.Drawing.Size(370, 27);
             this.textBox1.TabIndex = 0;
             // 
+            // idCol
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            this.idCol.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idCol.HeaderText = "ID";
+            this.idCol.MinimumWidth = 6;
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            this.idCol.Width = 125;
+            // 
+            // serviceIdCol
+            // 
+            this.serviceIdCol.HeaderText = "Service Id";
+            this.serviceIdCol.MinimumWidth = 6;
+            this.serviceIdCol.Name = "serviceIdCol";
+            this.serviceIdCol.ReadOnly = true;
+            this.serviceIdCol.Visible = false;
+            this.serviceIdCol.Width = 125;
+            // 
+            // orderedDateCol
+            // 
+            this.orderedDateCol.HeaderText = "Дата заказа";
+            this.orderedDateCol.MinimumWidth = 6;
+            this.orderedDateCol.Name = "orderedDateCol";
+            this.orderedDateCol.Width = 125;
+            // 
+            // customerIdCol
+            // 
+            this.customerIdCol.HeaderText = "Заказчик";
+            this.customerIdCol.MinimumWidth = 6;
+            this.customerIdCol.Name = "customerIdCol";
+            this.customerIdCol.Width = 125;
+            // 
+            // provisionReleaseDateCol
+            // 
+            this.provisionReleaseDateCol.HeaderText = "Предпол. дата выполнения";
+            this.provisionReleaseDateCol.MinimumWidth = 6;
+            this.provisionReleaseDateCol.Name = "provisionReleaseDateCol";
+            this.provisionReleaseDateCol.Width = 125;
+            // 
+            // releaseDateCol
+            // 
+            this.releaseDateCol.HeaderText = "Дата выполнения";
+            this.releaseDateCol.MinimumWidth = 6;
+            this.releaseDateCol.Name = "releaseDateCol";
+            this.releaseDateCol.Width = 125;
+            // 
+            // priceCol
+            // 
+            this.priceCol.HeaderText = "Цена, руб.";
+            this.priceCol.MinimumWidth = 6;
+            this.priceCol.Name = "priceCol";
+            this.priceCol.Width = 125;
+            // 
+            // isPayedCol
+            // 
+            this.isPayedCol.HeaderText = "Оплчачено";
+            this.isPayedCol.MinimumWidth = 6;
+            this.isPayedCol.Name = "isPayedCol";
+            this.isPayedCol.Width = 125;
+            // 
+            // progressCol
+            // 
+            this.progressCol.HeaderText = "В работе";
+            this.progressCol.MinimumWidth = 6;
+            this.progressCol.Name = "progressCol";
+            this.progressCol.Width = 125;
+            // 
+            // deleteCol
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            this.deleteCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.deleteCol.HeaderText = "Удалить";
+            this.deleteCol.MinimumWidth = 6;
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.Width = 125;
+            // 
             // OrderedServicesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -373,6 +391,7 @@
             this.Name = "OrderedServicesWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заказы по услугам";
+            this.Load += new System.EventHandler(this.OrderedServicesWindow_Load);
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -407,6 +426,8 @@
         private Label label1;
         private ComboBox comboBox1;
         private TextBox textBox1;
+        private DateTimePicker dateTimePicker1;
+        private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn serviceIdCol;
         private DataGridViewTextBoxColumn orderedDateCol;
         private DataGridViewTextBoxColumn customerIdCol;
@@ -416,6 +437,5 @@
         private DataGridViewCheckBoxColumn isPayedCol;
         private DataGridViewCheckBoxColumn progressCol;
         private DataGridViewButtonColumn deleteCol;
-        private DateTimePicker dateTimePicker1;
     }
 }
