@@ -5,18 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowWorldDbSQLite.Database;
 using WindowWorldDbSQLite.Database.Models;
+using WindowWorldDbSQLite.Services;
 
 namespace WindowWorldDbSQLite.Controllers
 {
     public class OrderedServiceController
     {
+        private SettingsDatabase settingsDatabase = new SettingsDatabase();
         public List<OrderedService> GetAllOrderedServiceByFilter(string search = "", string field = "")
         {
             List<OrderedService> orderedServiceList = null;
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(search == "")
                     {
@@ -48,7 +50,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     orderedService = db.OrderedServices.FirstOrDefault(os => os.Id == _id);
                 }
@@ -67,7 +69,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     db.OrderedServices.Add(obj);
                     db.SaveChanges();
@@ -88,7 +90,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using (_ContextDb db = new _ContextDb())
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(db.OrderedServices.Any(os => os.Id == obj.Id))
                     {

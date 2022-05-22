@@ -6,18 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowWorldDbSQLite.Database;
 using WindowWorldDbSQLite.Database.Models;
+using WindowWorldDbSQLite.Services;
 
 namespace WindowWorldDbSQLite.Controllers
 {
     public class ServiceController
     {
+        private SettingsDatabase settingsDatabase = new SettingsDatabase();
         public List<Service> GetAllServicesByFilter(string search = "", string field = "")
         {
             List<Service> services = null;
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(search != "")
                     {
@@ -67,7 +69,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     service = db.Services.FirstOrDefault(s => s.Id == _id);
                 }
@@ -86,7 +88,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     db.Services.Add(obj);
                     db.SaveChanges();
@@ -107,7 +109,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     db.Services.Remove(obj);
                     db.SaveChanges();

@@ -5,18 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowWorldDbSQLite.Database;
 using WindowWorldDbSQLite.Database.Models;
+using WindowWorldDbSQLite.Services;
 
 namespace WindowWorldDbSQLite.Controllers
 {
     public class CustomerContrller
     {
+        private SettingsDatabase settingsDatabase = new SettingsDatabase();
         public List<Customer> GetAllCustomers(string search = "", string field = "")
         {
             List<Customer> customers = null;
 
             try
             {
-                using (_ContextDb db = new _ContextDb())
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if (search != "")
                     {
@@ -72,7 +74,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(db.Customers.Any(c => c.Id == _id))
                     {
@@ -94,7 +96,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     db.Customers.Add(obj);
                     db.SaveChanges();
@@ -115,7 +117,7 @@ namespace WindowWorldDbSQLite.Controllers
 
             try
             {
-                using(_ContextDb db = new _ContextDb())
+                using(_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
                     if(db.Customers.Any(c => c.Id == obj.Id))
                     {
