@@ -20,7 +20,7 @@ namespace WindowWorldDbSQLite.Controllers
             {
                 using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
                 {
-                    if (search != "")
+                    if (search == "")
                     {
                         customers = db.Customers.ToList();
                     }
@@ -122,6 +122,29 @@ namespace WindowWorldDbSQLite.Controllers
                     if(db.Customers.Any(c => c.Id == obj.Id))
                     {
                         db.Customers.Remove(obj);
+                        db.SaveChanges();
+                        result = true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            return result;
+        }
+
+        public bool UpdateSingleCustomer(Customer obj)
+        {
+            bool result = false;
+
+            try
+            {
+                using (_ContextDb db = new _ContextDb(settingsDatabase.GetDbContextOptions()))
+                {
+                    if (db.Customers.Any(c => c.Id == obj.Id))
+                    {
+                        db.Customers.Update(obj);
                         db.SaveChanges();
                         result = true;
                     }
