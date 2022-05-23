@@ -118,6 +118,7 @@ namespace WindowWorldDbSQLite.Views
             
             UpdateForm();
             UpdateFormTwo();
+            timer1.Start();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -332,6 +333,11 @@ namespace WindowWorldDbSQLite.Views
             {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateForm();
         }
     }
 }

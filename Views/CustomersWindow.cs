@@ -62,6 +62,7 @@ namespace WindowWorldDbSQLite.Views
             
             comboSearchBox.SelectedIndex = 0;
             UpdateForm();
+            timer1.Start();
         }
 
         private void dataGridCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -203,6 +204,11 @@ namespace WindowWorldDbSQLite.Views
         private void comboSearchBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateForm();
         }
     }
 }

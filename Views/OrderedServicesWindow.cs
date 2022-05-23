@@ -118,6 +118,7 @@ namespace WindowWorldDbSQLite.Views
             
             UpdateForm();
             UpdateFormTwo();
+            timer1.Start();
         }
 
         private void ValidateInputSymbols(KeyPressEventArgs e)
@@ -328,6 +329,12 @@ namespace WindowWorldDbSQLite.Views
                     }
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateForm();
+            UpdateFormTwo();
         }
     }
 }

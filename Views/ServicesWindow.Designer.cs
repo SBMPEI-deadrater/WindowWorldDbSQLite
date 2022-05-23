@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.priceAddBox = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.comboSearchBox = new System.Windows.Forms.ComboBox();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -237,6 +239,12 @@
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // idCol
             // 
             this.idCol.HeaderText = "Код";
@@ -266,6 +274,7 @@
             this.progressCol.HeaderText = "В работе";
             this.progressCol.MinimumWidth = 6;
             this.progressCol.Name = "progressCol";
+            this.progressCol.Visible = false;
             this.progressCol.Width = 90;
             // 
             // saveCol
@@ -331,12 +340,13 @@
         private ComboBox comboSearchBox;
         private TextBox searchBox;
         private DataGridView dataGridView;
+        private Button addBtn;
+        private System.Windows.Forms.Timer timer1;
         private DataGridViewTextBoxColumn idCol;
         private DataGridViewTextBoxColumn typeCol;
         private DataGridViewTextBoxColumn priceCol;
         private DataGridViewCheckBoxColumn progressCol;
         private DataGridViewButtonColumn saveCol;
         private DataGridViewButtonColumn deleteCol;
-        private Button addBtn;
     }
 }

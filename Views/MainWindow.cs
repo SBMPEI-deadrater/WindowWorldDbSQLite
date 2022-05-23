@@ -135,13 +135,18 @@ namespace WindowWorldDbSQLite.Views
                 MessageBox.Show(item.Values.ToString());*/
                 //sb.Append(item. + " -- " + item.Value + "\n");
 
-            }
+        
             /*foreach (var item in dict)
             {
                 dict.Max(d => d.Value);
 
             }
             MessageBox.Show(.ToString());*/
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Информационная система для учета заказов клиентов в организации по позаказному производству пластиковых окон и дверей.", "О программе \"Оконный Мир v.7.5.1\"",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

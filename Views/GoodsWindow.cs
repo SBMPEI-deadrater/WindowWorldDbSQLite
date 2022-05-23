@@ -78,9 +78,11 @@ namespace WindowWorldDbSQLite.Views
                 case "user":
                     dataGridView.Columns[8].Visible = false;
                     dataGridView.Columns[9].Visible = false;
+                    tabControl1.TabPages.Remove(tabPage2);
                     break;
             }
             UpdateForm();
+            timer1.Start();
         }
 
         private void dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -257,6 +259,11 @@ namespace WindowWorldDbSQLite.Views
         private void priceAddBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidateInputSymbols(e);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateForm();
         }
     }
 }
