@@ -31,7 +31,6 @@ namespace WindowWorldDbSQLite.Services
                 var config = builder.Build();
                 // получаем строку подключения
                 string defaultConnectionString = config.GetConnectionString("DefaultConnection");
-                //MessageBox.Show($"{defaultConnectionString}", "Inform", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 var optionsBuilder = new DbContextOptionsBuilder<_ContextDb>();
                 var options = optionsBuilder.UseSqlite(defaultConnectionString).Options;
@@ -39,11 +38,9 @@ namespace WindowWorldDbSQLite.Services
             }
             catch
             {
-                var optionsBuilder = new DbContextOptionsBuilder<_ContextDb>();
-                var options = optionsBuilder.UseSqlite("Data Source=sqlite_window_world.db").Options;
-                MessageBox.Show("Удаленная база данных не найдена!\nРазвернута локальная база данных.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                return options;
+                return null;
             }
+
         }
 
 
