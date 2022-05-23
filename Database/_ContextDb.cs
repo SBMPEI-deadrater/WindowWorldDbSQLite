@@ -28,7 +28,7 @@ namespace WindowWorldDbSQLite.Database
             catch
             {
                 MessageBox.Show("Похоже что-то пошло не так.\nПроверьте базу данных.","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Environment.Exit(0);
+                //Environment.Exit(0);
             }
         }
 
