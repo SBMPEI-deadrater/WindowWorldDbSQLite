@@ -208,6 +208,8 @@ namespace WindowWorldDbSQLite.Views
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Thread.Sleep(1000);
+            dataGridCustomers.Rows.Clear();
             UpdateForm();
         }
     }
