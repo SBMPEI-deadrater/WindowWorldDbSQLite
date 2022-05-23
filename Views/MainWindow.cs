@@ -135,7 +135,7 @@ namespace WindowWorldDbSQLite.Views
                 MessageBox.Show(item.Values.ToString());*/
                 //sb.Append(item. + " -- " + item.Value + "\n");
 
-        
+            //}
             /*foreach (var item in dict)
             {
                 dict.Max(d => d.Value);
