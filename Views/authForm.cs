@@ -58,5 +58,10 @@ namespace WindowWorldDbSQLite.Views
         {
 
         }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
