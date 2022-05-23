@@ -21,7 +21,15 @@ namespace WindowWorldDbSQLite.Database
         public _ContextDb(DbContextOptions<_ContextDb> options) : base(options)
         {
             //Проверка существования БД
-            Database.EnsureCreated();
+            try
+            {
+                Database.EnsureCreated();
+            }
+            catch
+            {
+                MessageBox.Show("Похоже что-то пошло не так.\nПроверьте базу данных.","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Environment.Exit(0);
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -20,19 +20,30 @@ namespace WindowWorldDbSQLite.Services
         // Объект настройки БД
         public DbContextOptions<_ContextDb> GetDbContextOptions()
         {
-            var builder = new ConfigurationBuilder();
-            // установка пути к текущему каталогу
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            // получаем конфигурацию из файла appsettings.json
-            builder.AddJsonFile("Config\\appsettings.json");
-            // создаем конфигурацию
-            var config = builder.Build();
-            // получаем строку подключения
-            string connectionString = config.GetConnectionString("DefaultConnection");
+            try
+            {
+                var builder = new ConfigurationBuilder();
+                // установка пути к текущему каталогу
+                builder.SetBasePath(Directory.GetCurrentDirectory());
+                // получаем конфигурацию из файла appsettings.json
+                builder.AddJsonFile("Config\\appsettings.json");
+                // создаем конфигурацию
+                var config = builder.Build();
+                // получаем строку подключения
+                string defaultConnectionString = config.GetConnectionString("DefaultConnection");
+                //MessageBox.Show($"{defaultConnectionString}", "Inform", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            var optionsBuilder = new DbContextOptionsBuilder<_ContextDb>();
-            var options = optionsBuilder.UseSqlite(connectionString).Options;
-            return options;
+                var optionsBuilder = new DbContextOptionsBuilder<_ContextDb>();
+                var options = optionsBuilder.UseSqlite(defaultConnectionString).Options;
+                return options;
+            }
+            catch
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<_ContextDb>();
+                var options = optionsBuilder.UseSqlite("Data Source=sqlite_window_world.db").Options;
+                MessageBox.Show("Удаленная база данных не найдена!\nРазвернута локальная база данных.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return options;
+            }
         }
 
 
