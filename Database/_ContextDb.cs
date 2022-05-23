@@ -27,9 +27,7 @@ namespace WindowWorldDbSQLite.Database
             }
             catch
             {
-                //MessageBox.Show("Похоже что-то пошло не так.\nПроверьте базу данных.","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //throw new Exception("ХЕРНЯ С БД! ШОТА С ПУТЕМ!");
-                //Environment.Exit(0);
+                MessageBox.Show("Похоже что-то пошло не так.\nПроверьте базу данных.","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
