@@ -17,6 +17,8 @@ namespace WindowWorldDbSQLite.Views
 {
     public partial class GoodsWindow : Form
     {
+        public bool action = false;
+
         GoodController controller = null;
         List<Good> psItems = null;
         User mUser = null;
@@ -87,6 +89,8 @@ namespace WindowWorldDbSQLite.Views
 
         private void dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            action = true;
+
             if (e.ColumnIndex == 8)
             {
                 Good obj = new Good
@@ -103,6 +107,7 @@ namespace WindowWorldDbSQLite.Views
 
                 if (controller.UpdateSingleGood(obj))
                 {
+                    action = false;
                     UpdateForm();
                 }
                 else
@@ -227,6 +232,7 @@ namespace WindowWorldDbSQLite.Views
 
         private void searchBox_TextChanged_1(object sender, EventArgs e)
         {
+            action = true;
             GoodController controller = new GoodController();
             switch (comboSearchBox.SelectedIndex)
             {
@@ -263,7 +269,16 @@ namespace WindowWorldDbSQLite.Views
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            UpdateForm();
+            if (action == false)
+            {
+                Thread.Sleep(1000);
+                UpdateForm();
+            }
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            action = false;
         }
     }
 }

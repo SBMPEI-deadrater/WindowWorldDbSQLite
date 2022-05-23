@@ -20,6 +20,7 @@ namespace WindowWorldDbSQLite.Views
         CustomerContrller controller = null;
         List<Customer> psItems = null;
         User mUser = null;
+        public bool action = false;
 
 
         public CustomersWindow(User _user)
@@ -67,6 +68,7 @@ namespace WindowWorldDbSQLite.Views
 
         private void dataGridCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            action = true;
             CustomerContrller cc = new CustomerContrller();
             if (e.ColumnIndex == 6)
             {
@@ -83,6 +85,7 @@ namespace WindowWorldDbSQLite.Views
                 if (cc.UpdateSingleCustomer(obj))
                 {
                     UpdateForm();
+                    timer1.Start();
                     //MessageBox.Show("Покупатель успешно обновлен!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -106,6 +109,7 @@ namespace WindowWorldDbSQLite.Views
                 if (cc.DeleteSingleCustomer(obj))
                 {
                     UpdateForm();
+                    action = false;
                     //MessageBox.Show("Покупатель успешно удален!","Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -166,6 +170,7 @@ namespace WindowWorldDbSQLite.Views
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            action = true;
             CustomerContrller cc = new CustomerContrller();
             switch (comboSearchBox.SelectedIndex)
             {
@@ -208,9 +213,17 @@ namespace WindowWorldDbSQLite.Views
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Thread.Sleep(1000);
-            dataGridCustomers.Rows.Clear();
-            UpdateForm();
+            if (action == false)
+            {
+                Thread.Sleep(1000);
+                dataGridCustomers.Rows.Clear();
+                UpdateForm();
+            }
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            action = false;
         }
     }
 }

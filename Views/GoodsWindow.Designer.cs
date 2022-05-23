@@ -41,6 +41,16 @@
             this.comboSearchBox = new System.Windows.Forms.ComboBox();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameGoodsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgSrcCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saveCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,16 +66,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameGoodsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imgSrcCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.progressCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.saveCol = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,6 +89,7 @@
             this.tabControl1.Size = new System.Drawing.Size(1595, 913);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
@@ -211,6 +212,95 @@
             this.dataGridView.Size = new System.Drawing.Size(1088, 727);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "Код";
+            this.idCol.MinimumWidth = 6;
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Visible = false;
+            this.idCol.Width = 125;
+            // 
+            // nameGoodsCol
+            // 
+            this.nameGoodsCol.HeaderText = "Наименование";
+            this.nameGoodsCol.MinimumWidth = 6;
+            this.nameGoodsCol.Name = "nameGoodsCol";
+            this.nameGoodsCol.Width = 200;
+            // 
+            // companyCol
+            // 
+            this.companyCol.HeaderText = "Производитель";
+            this.companyCol.MinimumWidth = 6;
+            this.companyCol.Name = "companyCol";
+            this.companyCol.ReadOnly = true;
+            this.companyCol.Width = 125;
+            // 
+            // typeCol
+            // 
+            this.typeCol.HeaderText = "Вид изделия";
+            this.typeCol.MinimumWidth = 6;
+            this.typeCol.Name = "typeCol";
+            this.typeCol.ReadOnly = true;
+            this.typeCol.Width = 150;
+            // 
+            // priceCol
+            // 
+            this.priceCol.HeaderText = "Цена, руб.";
+            this.priceCol.MinimumWidth = 6;
+            this.priceCol.Name = "priceCol";
+            this.priceCol.Width = 125;
+            // 
+            // imgSrcCol
+            // 
+            this.imgSrcCol.HeaderText = "Путь к изображению";
+            this.imgSrcCol.MinimumWidth = 6;
+            this.imgSrcCol.Name = "imgSrcCol";
+            this.imgSrcCol.ReadOnly = true;
+            this.imgSrcCol.Visible = false;
+            this.imgSrcCol.Width = 125;
+            // 
+            // activeCol
+            // 
+            this.activeCol.HeaderText = "Доступно";
+            this.activeCol.MinimumWidth = 6;
+            this.activeCol.Name = "activeCol";
+            this.activeCol.Width = 90;
+            // 
+            // progressCol
+            // 
+            this.progressCol.HeaderText = "В работе";
+            this.progressCol.MinimumWidth = 6;
+            this.progressCol.Name = "progressCol";
+            this.progressCol.Visible = false;
+            this.progressCol.Width = 90;
+            // 
+            // saveCol
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
+            this.saveCol.DefaultCellStyle = dataGridViewCellStyle1;
+            this.saveCol.HeaderText = "Сохранить";
+            this.saveCol.MinimumWidth = 6;
+            this.saveCol.Name = "saveCol";
+            this.saveCol.Width = 125;
+            // 
+            // deleteCol
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
+            this.deleteCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.deleteCol.HeaderText = "Удалить";
+            this.deleteCol.MinimumWidth = 6;
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.Width = 90;
             // 
             // tabPage2
             // 
@@ -364,95 +454,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "Код";
-            this.idCol.MinimumWidth = 6;
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            this.idCol.Width = 125;
-            // 
-            // nameGoodsCol
-            // 
-            this.nameGoodsCol.HeaderText = "Наименование";
-            this.nameGoodsCol.MinimumWidth = 6;
-            this.nameGoodsCol.Name = "nameGoodsCol";
-            this.nameGoodsCol.Width = 200;
-            // 
-            // companyCol
-            // 
-            this.companyCol.HeaderText = "Производитель";
-            this.companyCol.MinimumWidth = 6;
-            this.companyCol.Name = "companyCol";
-            this.companyCol.ReadOnly = true;
-            this.companyCol.Width = 125;
-            // 
-            // typeCol
-            // 
-            this.typeCol.HeaderText = "Вид изделия";
-            this.typeCol.MinimumWidth = 6;
-            this.typeCol.Name = "typeCol";
-            this.typeCol.ReadOnly = true;
-            this.typeCol.Width = 150;
-            // 
-            // priceCol
-            // 
-            this.priceCol.HeaderText = "Цена, руб.";
-            this.priceCol.MinimumWidth = 6;
-            this.priceCol.Name = "priceCol";
-            this.priceCol.Width = 125;
-            // 
-            // imgSrcCol
-            // 
-            this.imgSrcCol.HeaderText = "Путь к изображению";
-            this.imgSrcCol.MinimumWidth = 6;
-            this.imgSrcCol.Name = "imgSrcCol";
-            this.imgSrcCol.ReadOnly = true;
-            this.imgSrcCol.Visible = false;
-            this.imgSrcCol.Width = 125;
-            // 
-            // activeCol
-            // 
-            this.activeCol.HeaderText = "Доступно";
-            this.activeCol.MinimumWidth = 6;
-            this.activeCol.Name = "activeCol";
-            this.activeCol.Width = 90;
-            // 
-            // progressCol
-            // 
-            this.progressCol.HeaderText = "В работе";
-            this.progressCol.MinimumWidth = 6;
-            this.progressCol.Name = "progressCol";
-            this.progressCol.Visible = false;
-            this.progressCol.Width = 90;
-            // 
-            // saveCol
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Lime;
-            this.saveCol.DefaultCellStyle = dataGridViewCellStyle1;
-            this.saveCol.HeaderText = "Сохранить";
-            this.saveCol.MinimumWidth = 6;
-            this.saveCol.Name = "saveCol";
-            this.saveCol.Width = 125;
-            // 
-            // deleteCol
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
-            this.deleteCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.deleteCol.HeaderText = "Удалить";
-            this.deleteCol.MinimumWidth = 6;
-            this.deleteCol.Name = "deleteCol";
-            this.deleteCol.Width = 90;
             // 
             // GoodsWindow
             // 
